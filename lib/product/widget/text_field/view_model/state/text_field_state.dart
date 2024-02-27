@@ -15,4 +15,13 @@ final class TextFieldState extends Equatable {
 
   @override
   List<Object?> get props => [isObscure];
+
+  /// Copy With
+  TextFieldState copyWith({
+    bool? isObscure,
+  }) {
+    return TextFieldState(
+      isObscure: isObscure ?? this.isObscure,
+    );
+  }
 }

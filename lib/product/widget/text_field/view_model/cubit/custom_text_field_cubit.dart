@@ -8,10 +8,6 @@ final class TextFieldCubit extends Cubit<TextFieldState> {
 
   /// Toggle Obscure
   void toggleObscure() {
-    emit(
-      TextFieldState(
-        isObscure: !state.isObscure,
-      ),
-    );
+    emit(state.copyWith(isObscure: !state.isObscure));
   }
 }
