@@ -60,6 +60,7 @@ dependencies:
   logger: ^2.0.2+1
   flutter_gen_runner: ^5.4.0
   easy_localization: ^3.0.4
+  kartal: ^3.5.0
 
 
   # Navigation
