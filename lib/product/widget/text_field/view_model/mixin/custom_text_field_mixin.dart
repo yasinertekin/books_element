@@ -1,4 +1,4 @@
-import 'package:bloc_example/product/widget/text_field/custom_text_field.dart';
+import 'package:bloc_example/product/widget/text_field/view/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
 /// CustomTextFieldMixin
