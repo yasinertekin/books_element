@@ -51,6 +51,7 @@ final class _RegisterViewBody extends StatelessWidget {
     final formKey = GlobalKey<FormState>();
     final emailController = TextEditingController();
     final passwordController = TextEditingController();
+    final repeatPasswordController = TextEditingController();
 
     return Form(
       key: formKey,
@@ -63,11 +64,20 @@ final class _RegisterViewBody extends StatelessWidget {
               CustomTextField(
                 controller: emailController,
                 validatorText: 'Please enter your email',
+                keyboardType: TextInputType.emailAddress,
               ),
               CustomTextField(
                 controller: passwordController,
+                keyboardType: TextInputType.visiblePassword,
                 labelText: 'Password',
                 validatorText: 'Please enter your password',
+              ),
+              CustomTextField(
+                controller: repeatPasswordController,
+                labelText: 'Repeat Password',
+                validatorText: 'Please enter your password',
+                keyboardType: TextInputType.visiblePassword,
+                textInputAction: TextInputAction.done,
               ),
               ElevatedButton(
                 onPressed: () {

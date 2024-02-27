@@ -5,16 +5,16 @@ final class _InputDecoration extends InputDecoration {
   _InputDecoration(
     String labelText,
     TextInputType textInputType,
-    BuildContext context,
+    TextFieldCubit textFieldCubit,
   ) : super(
           labelText: labelText,
           suffixIcon: textInputType == TextInputType.visiblePassword
               ? IconButton(
                   onPressed: () {
-                    context.read<TextFieldCubit>().toggleObscure();
+                    textFieldCubit.toggleObscure();
                   },
                   icon: Icon(
-                    context.read<TextFieldCubit>().state.isObscure
+                    textFieldCubit.state.isObscure
                         ? Icons.visibility
                         : Icons.visibility_off,
                   ),

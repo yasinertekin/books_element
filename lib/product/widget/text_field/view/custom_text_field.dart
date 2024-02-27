@@ -42,6 +42,7 @@ final class _CustomTextFieldState extends State<CustomTextField>
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<TextFieldCubit, TextFieldState>(
+      bloc: textFieldCubit,
       builder: (context, state) {
         return TextFormField(
           keyboardType: widget.keyboardType,
@@ -53,7 +54,7 @@ final class _CustomTextFieldState extends State<CustomTextField>
           decoration: _InputDecoration(
             widget.labelText,
             widget.keyboardType,
-            context,
+            textFieldCubit,
           ),
         );
       },
