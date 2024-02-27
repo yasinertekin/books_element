@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:bloc_example/product/core/constants/navigation_constants.dart';
 import 'package:bloc_example/product/router/app_router.gr.dart';
-import 'package:bloc_example/product/router/auth_guard.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'View,Route')
 
@@ -11,9 +11,15 @@ final class AppRouter extends $AppRouter {
         AdaptiveRoute(
           initial: true,
           page: LoginRoute.page,
-          guards: [AuthGuard()],
+          path: NavigationConstants.loginView,
         ),
-        AdaptiveRoute(page: RegisterRoute.page),
-        AdaptiveRoute(page: HomeRoute.page),
+        AdaptiveRoute(
+          page: RegisterRoute.page,
+          path: NavigationConstants.registerView,
+        ),
+        AdaptiveRoute(
+          page: HomeRoute.page,
+          path: NavigationConstants.homeView,
+        ),
       ];
 }
