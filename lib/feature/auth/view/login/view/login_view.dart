@@ -1,40 +1,30 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:bloc_example/feature/auth/view/login/mixin/login_view_mixin.dart';
-import 'package:bloc_example/feature/auth/view/register/view/register_view.dart';
 import 'package:bloc_example/feature/auth/view_model/cubit/login_cubit.dart';
 import 'package:bloc_example/feature/auth/view_model/state/login_state.dart';
-import 'package:bloc_example/feature/home/home_view.dart';
+import 'package:bloc_example/gen/index.dart';
+import 'package:bloc_example/product/core/constants/navigation_constants.dart';
+import 'package:bloc_example/product/core/extensions/column_extension.dart';
+import 'package:bloc_example/product/core/extensions/contex_extension.dart';
+import 'package:bloc_example/product/mixin/navigation_mixin.dart';
+import 'package:bloc_example/product/mixin/show_error_message.dart';
 import 'package:bloc_example/product/model/users.dart';
+import 'package:bloc_example/product/widget/custom_divider.dart';
 import 'package:bloc_example/product/widget/custom_loading.dart';
-import 'package:bloc_example/product/widget/text_field/custom_text_field.dart';
+import 'package:bloc_example/product/widget/sign_in_methods.dart';
+import 'package:bloc_example/product/widget/text_field/view/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'widget/login_button.dart';
+part 'widget/login_view_title.dart';
+part 'widget/register_button.dart';
 
 /// Login View
 @RoutePage()
-final class LoginView extends StatelessWidget with LoginViewMixin<LoginView> {
+final class LoginView extends StatelessWidget
+    with ShowErrorMessageMixin, NavigationMixin {
   /// Login View Constructor
   LoginView({super.key});
-
-  @override
-  void showErrorMessage(BuildContext context, String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-      ),
-    );
-  }
-
-  @override
-  void navigateToHome(BuildContext context) {
-    Navigator.of(context).push<Widget>(
-      MaterialPageRoute<Widget>(
-        builder: (context) => const HomeView(),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +34,10 @@ final class LoginView extends StatelessWidget with LoginViewMixin<LoginView> {
           state.maybeWhen(
             orElse: () {},
             error: (message) => showErrorMessage(context, message),
-            success: () => navigateToHome(context),
+            success: () => navigateToNamedRoute(
+              context,
+              NavigationConstants.homeView,
+            ),
           );
         },
         builder: (context, state) {
@@ -70,38 +63,37 @@ final class _LoginViewBody extends StatelessWidget {
 
     return Form(
       key: formKey,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CustomTextField(
-            controller: emailController,
-            keyboardType: TextInputType.emailAddress,
-            validatorText: 'Please enter a email',
-          ),
-          CustomTextField(
-            controller: passwordController,
-            labelText: 'Password',
-            keyboardType: TextInputType.visiblePassword,
-            textInputAction: TextInputAction.done,
-            validatorText: 'Please enter a  password',
-          ),
-          _LoginButton(
-            formKey: formKey,
-            loginCubit: loginCubit,
-            emailController: emailController,
-            passwordController: passwordController,
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push<Widget>(
-                MaterialPageRoute<Widget>(
-                  builder: (context) => const RegisterView(),
-                ),
-              );
-            },
-            child: const Text('Register'),
-          ),
-        ],
+      child: Padding(
+        padding: context.paddingAllDefault,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Assets.images.imgReadBook.image(),
+              const _LoginViewTitle(),
+              CustomTextField(
+                controller: emailController,
+                keyboardType: TextInputType.emailAddress,
+                validatorText: 'Please enter a email',
+              ),
+              CustomTextField(
+                controller: passwordController,
+                labelText: 'Password',
+                keyboardType: TextInputType.visiblePassword,
+                textInputAction: TextInputAction.done,
+                validatorText: 'Please enter a  password',
+              ),
+              _LoginButton(
+                formKey: formKey,
+                loginCubit: loginCubit,
+                emailController: emailController,
+                passwordController: passwordController,
+              ),
+              const CustomDivider(),
+              const SignInMethods(),
+              const _RegisterButton(),
+            ],
+          ).space(context.lowValue),
+        ),
       ),
     );
   }

@@ -4,6 +4,7 @@ import 'package:bloc_example/feature/auth/use_case/register_use_case.dart';
 import 'package:bloc_example/feature/auth/view_model/cubit/login_cubit.dart';
 import 'package:bloc_example/feature/auth/view_model/cubit/register_cubit.dart';
 import 'package:bloc_example/product/service/auth_interface.dart';
+import 'package:bloc_example/product/widget/text_field/view_model/cubit/custom_text_field_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 /// Locator
@@ -16,19 +17,13 @@ abstract final class Locator {
   /// Register Cubit
   static RegisterCubit get registerCubit => _instance<RegisterCubit>();
 
+  /// Counter Cubit
+  static TextFieldCubit get counterCubit => _instance<TextFieldCubit>();
+
   /// Setup
   static Future<void> setup() async {
+    // Repository'ler
     _instance
-      ..registerFactory<LoginCubit>(
-        () => LoginCubit(
-          _instance(),
-        ),
-      )
-      ..registerFactory<LoginUseCase>(
-        () => LoginUseCase(
-          _instance(),
-        ),
-      )
       ..registerFactory<AuthInterFace>(
         AuthImpl.new,
       )
@@ -41,12 +36,31 @@ abstract final class Locator {
         ),
       )
 
-      /// Registering the instance of the AuthImpl
+      // Use Case'ler
+      ..registerFactory<LoginUseCase>(
+        () => LoginUseCase(
+          _instance(),
+        ),
+      )
       ..registerSingleton<RegisterUseCase>(
         RegisterUseCase(
           _instance(),
         ),
       )
-      ..registerFactory<RegisterCubit>(() => RegisterCubit(_instance()));
+
+      // Cubit'ler
+      ..registerFactory<LoginCubit>(
+        () => LoginCubit(
+          _instance(),
+        ),
+      )
+      ..registerFactory<TextFieldCubit>(
+        TextFieldCubit.new,
+      )
+      ..registerFactory<RegisterCubit>(
+        () => RegisterCubit(
+          _instance(),
+        ),
+      );
   }
 }

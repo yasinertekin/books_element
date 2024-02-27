@@ -15,18 +15,25 @@ final class _LoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        if (formKey.currentState?.validate() ?? false) {
-          loginCubit.signInWithEmailAndPassword(
-            Users(
-              email: emailController.text,
-              password: passwordController.text,
-            ),
-          );
-        }
-      },
-      child: const Text('Login'),
+    return SizedBox(
+      width: double.infinity,
+      height: context.lowValue * 6.5,
+      child: ElevatedButton(
+        onPressed: () {
+          if (formKey.currentState?.validate() ?? false) {
+            loginCubit.signInWithEmailAndPassword(
+              Users(
+                email: emailController.text,
+                password: passwordController.text,
+              ),
+            );
+          }
+        },
+        child: Text(
+          'Login',
+          style: context.textTheme.headlineSmall,
+        ),
+      ),
     );
   }
 }
