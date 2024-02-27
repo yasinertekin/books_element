@@ -100,6 +100,7 @@ final class _RegisterViewBody extends StatelessWidget {
                     registerCubit: registerCubit,
                     emailController: emailController,
                     passwordController: passwordController,
+                    repeatPasswordController: repeatPasswordController,
                   ),
                   const CustomDivider(),
                   const SignInMethods(),

@@ -1,17 +1,19 @@
 part of '../register_view.dart';
 
-final class _RegisterButton extends StatelessWidget {
+final class _RegisterButton extends StatelessWidget with ShowErrorMessageMixin {
   const _RegisterButton({
     required this.formKey,
     required this.registerCubit,
     required this.emailController,
     required this.passwordController,
+    required this.repeatPasswordController,
   });
 
   final GlobalKey<FormState> formKey;
   final RegisterCubit registerCubit;
   final TextEditingController emailController;
   final TextEditingController passwordController;
+  final TextEditingController repeatPasswordController;
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +21,7 @@ final class _RegisterButton extends StatelessWidget {
       width: double.infinity,
       child: ElevatedButton(
         onPressed: () {
-          if (formKey.currentState?.validate() ?? false) {
-            registerCubit.register(
-              email: emailController.text,
-              password: passwordController.text,
-            );
-          }
+          _chechFormKeyStateAndPasswordController(context);
         },
         child: Text(
           'Register',
@@ -32,5 +29,18 @@ final class _RegisterButton extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _chechFormKeyStateAndPasswordController(BuildContext context) {
+    if (formKey.currentState?.validate() ?? false) {
+      if (passwordController.text == repeatPasswordController.text) {
+        registerCubit.register(
+          email: emailController.text,
+          password: passwordController.text,
+        );
+      } else {
+        showErrorMessage(context, 'Password does not match');
+      }
+    }
   }
 }

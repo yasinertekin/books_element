@@ -46,7 +46,8 @@ final class _CustomTextFieldState extends State<CustomTextField>
       builder: (context, state) {
         return TextFormField(
           keyboardType: widget.keyboardType,
-          obscureText: !state.isObscure,
+          obscureText: widget.keyboardType == TextInputType.visiblePassword &&
+              !state.isObscure,
           scrollPhysics: const NeverScrollableScrollPhysics(),
           textInputAction: widget.textInputAction,
           validator: _returnValidate,

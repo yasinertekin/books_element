@@ -8,7 +8,7 @@ mixin NavigationMixin {
     context.router.pop();
   }
 
-  /// Navigate to Custom Route
+  /// Navigate to Named Route
   void navigateToNamedRoute(BuildContext context, String route) {
     context.router.pushNamed(route);
   }
