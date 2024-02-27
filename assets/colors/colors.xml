@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="lightThemeColor">#F2F2F2</color>
+<resources> 
+ <color name="milk_tea">#F5CB84</color>
+<color name="cinnamon" type="material">#955E1C</color>
+<color name="yellow_ocher" type="material material-accent">#DF9527</color>
+<color name="colorBlue">#3a3967</color>
+<color name="colorWhite">#FFFFFF</color>
+<color name="colorBlack">#000000</color>
+<color name="colorGrey">#808080</color>
+<color name="colorFoggyPith">#fbf7ef</color>
+<color name="colorSpanishWhite">#ded2b8</color>
+<color name="colorNitens">#3a3967</color>
 
 </resources>
