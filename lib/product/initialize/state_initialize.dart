@@ -21,6 +21,9 @@ final class StateInitialize extends StatelessWidget {
         BlocProvider(
           create: (context) => Locator.registerCubit,
         ),
+        BlocProvider(
+          create: (context) => Locator.counterCubit,
+        ),
       ],
       child: child,
     );
