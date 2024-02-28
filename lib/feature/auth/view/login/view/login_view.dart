@@ -38,7 +38,7 @@ final class LoginView extends StatelessWidget
             error: (message) => showErrorMessage(context, message),
             success: () => navigateToNamedRoute(
               context,
-              NavigationConstants.homeView,
+              NavigationEnum.homeView.value,
             ),
           );
         },

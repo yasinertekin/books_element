@@ -12,7 +12,7 @@ final class _StartButton extends StatelessWidget with NavigationMixin {
         onPressed: () {
           navigateToNamedRoute(
             context,
-            NavigationConstants.registerView,
+            NavigationEnum.loginView.value,
           );
         },
         child: Text(

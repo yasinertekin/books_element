@@ -10,7 +10,7 @@ final class _RegisterButton extends StatelessWidget with NavigationMixin {
       child: OutlinedButton(
         onPressed: () => navigateToNamedRoute(
           context,
-          NavigationConstants.registerView,
+          NavigationEnum.registerView.value,
         ),
         child: const Text(
           LocaleKeys.register_alreadyHaveAccount,

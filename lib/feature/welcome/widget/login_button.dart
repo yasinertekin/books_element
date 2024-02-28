@@ -9,7 +9,7 @@ final class _LoginButton extends StatelessWidget with NavigationMixin {
       onPressed: () {
         navigateToNamedRoute(
           context,
-          NavigationConstants.loginView,
+          NavigationEnum.loginView.value,
         );
       },
       child: Text(

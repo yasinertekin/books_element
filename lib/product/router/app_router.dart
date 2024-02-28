@@ -11,19 +11,19 @@ final class AppRouter extends $AppRouter {
         AdaptiveRoute(
           initial: true,
           page: WelcomeRoute.page,
-          path: NavigationConstants.welcomeView,
+          path: NavigationEnum.welcomeView.value,
         ),
         AdaptiveRoute(
           page: LoginRoute.page,
-          path: NavigationConstants.loginView,
+          path: NavigationEnum.loginView.value,
         ),
         AdaptiveRoute(
           page: RegisterRoute.page,
-          path: NavigationConstants.registerView,
+          path: NavigationEnum.registerView.value,
         ),
         AdaptiveRoute(
           page: HomeRoute.page,
-          path: NavigationConstants.homeView,
+          path: NavigationEnum.homeView.value,
         ),
       ];
 }
