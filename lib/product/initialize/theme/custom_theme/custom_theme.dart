@@ -7,6 +7,7 @@ part 'style/outlined_input_border.dart';
 part 'style/text_theme.dart';
 
 /// Custom Theme
+@immutable
 final class CustomTheme implements AppTheme {
   @override
   ThemeData get themeData => ThemeData(
