@@ -1,4 +1,4 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:bloc_example/index.dart';
 
 part 'login_state.freezed.dart';
 

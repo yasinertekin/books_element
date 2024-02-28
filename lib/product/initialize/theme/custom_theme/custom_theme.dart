@@ -1,6 +1,5 @@
-import 'package:bloc_example/gen/colors.gen.dart';
+import 'package:bloc_example/index.dart';
 import 'package:bloc_example/product/initialize/theme/app_theme/app_theme.dart';
-import 'package:flutter/material.dart';
 
 part 'style/button_style.dart';
 part 'style/outlined_input_border.dart';

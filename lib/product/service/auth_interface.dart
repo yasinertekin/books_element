@@ -1,5 +1,4 @@
-import 'package:bloc_example/product/model/users.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:bloc_example/index.dart';
 
 /// AuthInterFace
 abstract class AuthInterFace {

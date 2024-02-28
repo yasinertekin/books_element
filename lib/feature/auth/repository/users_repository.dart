@@ -1,6 +1,4 @@
-import 'package:bloc_example/product/model/users.dart';
-import 'package:bloc_example/product/service/auth_interface.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:bloc_example/index.dart';
 
 /// AuthInterFace
 @immutable

@@ -1,10 +1,4 @@
-import 'package:bloc_example/product/initialize/application_initialize.dart';
-import 'package:bloc_example/product/initialize/localization/project_localization.dart';
-import 'package:bloc_example/product/initialize/state_initialize.dart';
-import 'package:bloc_example/product/initialize/theme/custom_theme/custom_theme.dart';
-import 'package:bloc_example/product/router/app_router.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
+import 'package:bloc_example/index.dart';
 
 void main() async {
   await ApplicationInitialize().make();

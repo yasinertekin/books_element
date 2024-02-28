@@ -1,5 +1,4 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+import 'package:bloc_example/index.dart';
 
 /// Navigation Mixin
 mixin NavigationMixin {

@@ -1,5 +1,4 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:bloc_example/product/core/constants/navigation_constants.dart';
+import 'package:bloc_example/index.dart';
 import 'package:bloc_example/product/router/app_router.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'View,Route')

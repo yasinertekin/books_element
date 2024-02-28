@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:bloc_example/index.dart';
 
 /// AppTheme
 abstract class AppTheme {

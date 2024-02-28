@@ -1,6 +1,4 @@
-import 'package:bloc_example/product/widget/text_field/view/custom_text_field.dart';
-import 'package:bloc_example/product/widget/text_field/view_model/cubit/custom_text_field_cubit.dart';
-import 'package:flutter/material.dart';
+import 'package:bloc_example/index.dart';
 
 /// CustomTextFieldMixin
 mixin CustomTextFieldMixin on State<CustomTextField> {

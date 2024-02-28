@@ -1,11 +1,4 @@
-import 'package:bloc_example/feature/auth/repository/users_repository.dart';
-import 'package:bloc_example/feature/auth/use_case/login_use_case.dart';
-import 'package:bloc_example/feature/auth/use_case/register_use_case.dart';
-import 'package:bloc_example/feature/auth/view_model/cubit/login_cubit.dart';
-import 'package:bloc_example/feature/auth/view_model/cubit/register_cubit.dart';
-import 'package:bloc_example/product/service/auth_interface.dart';
-import 'package:bloc_example/product/widget/text_field/view_model/cubit/custom_text_field_cubit.dart';
-import 'package:get_it/get_it.dart';
+import 'package:bloc_example/index.dart';
 
 /// Locator
 abstract final class Locator {

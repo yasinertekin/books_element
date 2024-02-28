@@ -1,7 +1,4 @@
-import 'package:bloc_example/feature/auth/use_case/register_use_case.dart';
-import 'package:bloc_example/feature/auth/view_model/state/register_state.dart';
-import 'package:bloc_example/product/model/users.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:bloc_example/index.dart';
 
 /// Register Cubit
 final class RegisterCubit extends Cubit<RegisterState> {

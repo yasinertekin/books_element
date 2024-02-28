@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:bloc_example/index.dart';
 
 /// Show Error Message Mixin
 mixin ShowErrorMessageMixin {

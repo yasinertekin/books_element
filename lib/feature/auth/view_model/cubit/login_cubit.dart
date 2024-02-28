@@ -1,7 +1,4 @@
-import 'package:bloc_example/feature/auth/use_case/login_use_case.dart';
-import 'package:bloc_example/feature/auth/view_model/state/login_state.dart';
-import 'package:bloc_example/product/model/users.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:bloc_example/index.dart';
 
 /// LoginCubit
 final class LoginCubit extends Cubit<LoginState> {

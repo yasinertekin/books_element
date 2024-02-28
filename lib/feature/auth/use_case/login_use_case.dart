@@ -1,6 +1,4 @@
-import 'package:bloc_example/feature/auth/repository/users_repository.dart';
-import 'package:bloc_example/product/model/users.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:bloc_example/index.dart';
 
 /// LoginUseCaseMixin
 @immutable
