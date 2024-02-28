@@ -10,6 +10,10 @@ final class AppRouter extends $AppRouter {
   List<AdaptiveRoute> get routes => [
         AdaptiveRoute(
           initial: true,
+          page: WelcomeRoute.page,
+          path: NavigationConstants.welcomeView,
+        ),
+        AdaptiveRoute(
           page: LoginRoute.page,
           path: NavigationConstants.loginView,
         ),

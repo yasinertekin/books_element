@@ -2,12 +2,15 @@
 
 abstract class  LocaleKeys {
   static const login_title = 'login.title';
-  static const login_login = 'login.login';
   static const login = 'login';
-  static const register_register = 'register.register';
+  static const buttons_login = 'buttons.login';
+  static const buttons_register = 'buttons.register';
+  static const buttons_start = 'buttons.start';
+  static const buttons = 'buttons';
+  static const welcome_title = 'welcome.title';
+  static const welcome = 'welcome';
   static const register_title = 'register.title';
   static const register_alreadyHaveAccount = 'register.alreadyHaveAccount';
-  static const register_login = 'register.login';
   static const register = 'register';
   static const textFields_email = 'textFields.email';
   static const textFields_password = 'textFields.password';

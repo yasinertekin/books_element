@@ -1,14 +1,20 @@
 {
     "login":{
-        "title":"Book Worm",
-        "login":"Giriş Yap"
-
+        "title":"Book Worm"
     },
-    "register":{
+    "buttons":{
+        "login":"Giriş Yap",
         "register":"Kayıt Ol",
+        "start":"Başla"
+       
+    },
+     "welcome":{
+        "title":"Kitaplarınız\nTek Bir Yerde Readium'da"
+    },
+
+    "register":{
         "title":"Favori Kitaplarınızı Kaydedin",
-        "alreadyHaveAccount":"Zaten bir hesabınız var mı?",
-        "login":"Giriş Yap"
+        "alreadyHaveAccount":"Zaten bir hesabınız var mı?"
     },
     "textFields":{
         "email":"Email",

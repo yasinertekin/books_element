@@ -14,4 +14,7 @@ final class NavigationConstants {
 
   /// Home View
   static const String homeView = '/home';
+
+  /// Welcome View
+  static const String welcomeView = '/';
 }

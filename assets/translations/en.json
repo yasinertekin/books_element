@@ -1,9 +1,18 @@
 {
     "login":{
-        "title":"Book Worm",
-        "login":"Login"
+        "title":"Book Worm"
 
     },
+    "buttons":{
+        "login":"Login",
+        "register":"Register",
+        "start":"Start"
+       
+    },
+    "welcome":{
+        "title":"All\nYour books in one\nplace on\nReadium"
+    },
+
     "register":{
         "register":"Register",
         "title":"Start Reading\nYour Favourite Books\nToday!",
