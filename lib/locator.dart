@@ -18,7 +18,7 @@ abstract final class Locator {
   static RegisterCubit get registerCubit => _instance<RegisterCubit>();
 
   /// Counter Cubit
-  static TextFieldCubit get counterCubit => _instance<TextFieldCubit>();
+  static TextFieldCubit get textFieldCubit => _instance<TextFieldCubit>();
 
   /// Setup
   static Future<void> setup() async {

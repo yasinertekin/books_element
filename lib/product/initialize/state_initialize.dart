@@ -22,7 +22,7 @@ final class StateInitialize extends StatelessWidget {
           create: (context) => Locator.registerCubit,
         ),
         BlocProvider(
-          create: (context) => Locator.counterCubit,
+          create: (context) => Locator.textFieldCubit,
         ),
       ],
       child: child,

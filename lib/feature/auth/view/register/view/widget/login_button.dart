@@ -9,7 +9,7 @@ final class _LogInButton extends StatelessWidget with NavigationMixin {
       onPressed: () => navigateToBack(context),
       child: Text(
         'Log In',
-        style: context.textTheme.headlineLarge?.copyWith(
+        style: context.textTheme.headlineSmall?.copyWith(
           color: ColorName.colorBlue,
         ),
       ),

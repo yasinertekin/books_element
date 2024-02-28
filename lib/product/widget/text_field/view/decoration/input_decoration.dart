@@ -9,11 +9,11 @@ final class _InputDecoration extends InputDecoration {
   ) : super(
           labelText: labelText,
           suffixIcon: textInputType == TextInputType.visiblePassword
-              ? IconButton(
-                  onPressed: () {
+              ? GestureDetector(
+                  onTap: () {
                     textFieldCubit.toggleObscure();
                   },
-                  icon: Icon(
+                  child: Icon(
                     textFieldCubit.state.isObscure
                         ? Icons.visibility
                         : Icons.visibility_off,
