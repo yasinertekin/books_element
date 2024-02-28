@@ -8,11 +8,11 @@ final class _LogInButton extends StatelessWidget with NavigationMixin {
     return TextButton(
       onPressed: () => navigateToBack(context),
       child: Text(
-        'Log In',
+        LocaleKeys.register_login,
         style: context.textTheme.headlineSmall?.copyWith(
           color: ColorName.colorBlue,
         ),
-      ),
+      ).tr(),
     );
   }
 }

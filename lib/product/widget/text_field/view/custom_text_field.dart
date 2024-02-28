@@ -11,11 +11,11 @@ final class CustomTextField extends StatefulWidget {
   /// CustomTextField Constructor
   const CustomTextField({
     required this.controller,
+    required this.labelText,
     super.key,
     this.validatorText = 'Please enter some text',
     this.keyboardType = TextInputType.text,
     this.textInputAction = TextInputAction.next,
-    this.labelText = 'Email',
   });
 
   /// Controller

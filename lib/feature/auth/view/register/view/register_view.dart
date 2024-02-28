@@ -6,12 +6,14 @@ import 'package:bloc_example/gen/colors.gen.dart';
 import 'package:bloc_example/product/core/constants/navigation_constants.dart';
 import 'package:bloc_example/product/core/extensions/column_extension.dart';
 import 'package:bloc_example/product/core/extensions/contex_extension.dart';
+import 'package:bloc_example/product/initialize/language/locale_keys.g.dart';
 import 'package:bloc_example/product/mixin/navigation_mixin.dart';
 import 'package:bloc_example/product/mixin/show_error_message.dart';
 import 'package:bloc_example/product/widget/custom_divider.dart';
 import 'package:bloc_example/product/widget/custom_loading.dart';
 import 'package:bloc_example/product/widget/sign_in_methods.dart';
 import 'package:bloc_example/product/widget/text_field/view/custom_text_field.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -72,26 +74,29 @@ final class _RegisterViewBody extends StatelessWidget {
             Assets.images.imgHeader.image(),
             Padding(
               padding: context.paddingAllDefault.copyWith(
-                top: context.height * 0.07,
+                top: context.height * 0.13,
               ),
               child: Column(
                 children: [
                   const _RegisterTitle(),
                   CustomTextField(
                     controller: emailController,
-                    validatorText: 'Please enter your email',
+                    validatorText: LocaleKeys.textFields_mailValidation.tr(),
                     keyboardType: TextInputType.emailAddress,
+                    labelText: LocaleKeys.textFields_email.tr(),
                   ),
                   CustomTextField(
                     controller: passwordController,
                     keyboardType: TextInputType.visiblePassword,
-                    labelText: 'Password',
-                    validatorText: 'Please enter your password',
+                    labelText: LocaleKeys.textFields_password.tr(),
+                    validatorText:
+                        LocaleKeys.textFields_passwordValidation.tr(),
                   ),
                   CustomTextField(
                     controller: repeatPasswordController,
-                    labelText: 'Repeat Password',
-                    validatorText: 'Please enter your password',
+                    labelText: LocaleKeys.textFields_repeatPassword.tr(),
+                    validatorText:
+                        LocaleKeys.textFields_passwordValidation.tr(),
                     keyboardType: TextInputType.visiblePassword,
                     textInputAction: TextInputAction.done,
                   ),
@@ -104,7 +109,7 @@ final class _RegisterViewBody extends StatelessWidget {
                   ),
                   const CustomDivider(),
                   const SignInMethods(),
-                  const Text('Already have an account?'),
+                  const Text(LocaleKeys.register_alreadyHaveAccount).tr(),
                   const _LogInButton(),
                 ],
               ).space(

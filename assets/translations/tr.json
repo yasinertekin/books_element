@@ -1,3 +1,27 @@
 {
-    "deneme":"deneme"
+    "login":{
+        "title":"Book Worm",
+        "login":"Giriş Yap"
+
+    },
+    "register":{
+        "register":"Kayıt Ol",
+        "title":"Favori Kitaplarınızı Kaydedin",
+        "alreadyHaveAccount":"Zaten bir hesabınız var mı?",
+        "login":"Giriş Yap"
+    },
+    "textFields":{
+        "email":"Email",
+        "password":"Şifre",
+        "repeatPassword":"Şifre Tekrarı",
+        "mailValidation":"Lütfen mail adresinizi giriniz",
+        "passwordValidation":"Lütfen şifrenizi giriniz",
+        "repeatPasswordValidation":"Lütfen şifrenizi tekrar giriniz",
+        "passwordsNotMatch":"Şifreler uyuşmuyor"
+    },
+    "divider":{
+        "or":"veya"
+    }
+
+    
 }

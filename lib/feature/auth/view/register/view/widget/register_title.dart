@@ -6,11 +6,11 @@ final class _RegisterTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      'Start Reading\nYour Favourite Books\nToday!',
+      LocaleKeys.register_title,
       textAlign: TextAlign.center,
       style: context.textTheme.displaySmall?.copyWith(
         fontWeight: FontWeight.bold,
       ),
-    );
+    ).tr();
   }
 }

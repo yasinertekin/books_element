@@ -5,6 +5,7 @@ import 'package:bloc_example/gen/index.dart';
 import 'package:bloc_example/product/core/constants/navigation_constants.dart';
 import 'package:bloc_example/product/core/extensions/column_extension.dart';
 import 'package:bloc_example/product/core/extensions/contex_extension.dart';
+import 'package:bloc_example/product/initialize/language/locale_keys.g.dart';
 import 'package:bloc_example/product/mixin/navigation_mixin.dart';
 import 'package:bloc_example/product/mixin/show_error_message.dart';
 import 'package:bloc_example/product/model/users.dart';
@@ -12,6 +13,7 @@ import 'package:bloc_example/product/widget/custom_divider.dart';
 import 'package:bloc_example/product/widget/custom_loading.dart';
 import 'package:bloc_example/product/widget/sign_in_methods.dart';
 import 'package:bloc_example/product/widget/text_field/view/custom_text_field.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -73,14 +75,15 @@ final class _LoginViewBody extends StatelessWidget {
               CustomTextField(
                 controller: emailController,
                 keyboardType: TextInputType.emailAddress,
-                validatorText: 'Please enter a email',
+                validatorText: LocaleKeys.textFields_mailValidation.tr(),
+                labelText: LocaleKeys.textFields_email.tr(),
               ),
               CustomTextField(
                 controller: passwordController,
-                labelText: 'Password',
+                labelText: LocaleKeys.textFields_password.tr(),
                 keyboardType: TextInputType.visiblePassword,
                 textInputAction: TextInputAction.done,
-                validatorText: 'Please enter a  password',
+                validatorText: LocaleKeys.textFields_passwordValidation.tr(),
               ),
               _LoginButton(
                 formKey: formKey,

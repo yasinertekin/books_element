@@ -1,3 +1,27 @@
 {
-    "deneme":"deneme"
+    "login":{
+        "title":"Book Worm",
+        "login":"Login"
+
+    },
+    "register":{
+        "register":"Register",
+        "title":"Start Reading\nYour Favourite Books\nToday!",
+        "alreadyHaveAccount":"Already have an account?",
+        "login":"Login"
+    },
+    "textFields":{
+        "email":"Email",
+        "password":"Password",
+        "repeatPassword":"Repeat Password",
+        "mailValidation":"Please enter your e-mail address",
+        "passwordValidation":"Please enter your password",
+        "repeatPasswordValidation":"Please repeat your password",
+        "passwordsNotMatch":"Passwords do not match"
+    },
+    "divider":{
+        "or":"or"
+    }
+
+    
 }

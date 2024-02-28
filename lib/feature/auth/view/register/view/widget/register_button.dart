@@ -24,9 +24,9 @@ final class _RegisterButton extends StatelessWidget with ShowErrorMessageMixin {
           _chechFormKeyStateAndPasswordController(context);
         },
         child: Text(
-          'Register',
+          LocaleKeys.register_register,
           style: context.textTheme.headlineSmall,
-        ),
+        ).tr(),
       ),
     );
   }

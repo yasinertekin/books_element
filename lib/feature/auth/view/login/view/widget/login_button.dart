@@ -30,9 +30,9 @@ final class _LoginButton extends StatelessWidget {
           }
         },
         child: Text(
-          'Login',
+          LocaleKeys.login_login,
           style: context.textTheme.headlineSmall,
-        ),
+        ).tr(),
       ),
     );
   }
