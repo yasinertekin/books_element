@@ -15,7 +15,6 @@ final class LoginView extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       body: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {
           state.maybeWhen(
@@ -85,7 +84,7 @@ final class _LoginViewBody extends StatelessWidget {
               const _RegisterButton(),
             ],
           ).space(
-            context.dynamicHeight(0.019),
+            context.dynamicHeight(0.02),
           ),
         ),
       ),

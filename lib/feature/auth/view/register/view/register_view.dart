@@ -19,9 +19,7 @@ final class RegisterView extends StatelessWidget
       body: BlocConsumer<RegisterCubit, RegisterState>(
         listener: (context, state) {
           state.maybeWhen(
-            orElse: () {
-              return;
-            },
+            orElse: () {},
             error: (message) => showErrorMessage(context, message),
             success: () => navigateToNamedRoute(
               context,
@@ -120,7 +118,10 @@ final class _RegisterForm extends StatelessWidget {
                 repeatPasswordController: repeatPasswordController,
               ),
               const CustomDivider(),
-              const SignInMethods(),
+              SizedBox(
+                height: context.dynamicHeight(0.1),
+                child: const SignInMethods(),
+              ),
               const Text(LocaleKeys.register_alreadyHaveAccount).tr(),
               const _LogInButton(),
             ],

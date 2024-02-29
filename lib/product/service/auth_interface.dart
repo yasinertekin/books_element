@@ -1,4 +1,5 @@
 import 'package:bloc_example/index.dart';
+import 'package:bloc_example/product/utility/sign_in_exception.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 /// AuthInterFace
@@ -31,9 +32,9 @@ final class AuthImpl implements AuthInterFace {
       );
       return userCredential;
     } catch (e) {
-      // Hata oluştuğunda yapılacak işlemler
-      print('Hata: $e');
-      rethrow; // Hatanın yukarıya fırlatılması (yalnızca gerekirse)
+      throw const CustomException(
+        'E-posta adresi veya şifre hatalı. Lütfen tekrar deneyin.',
+      );
     }
   }
 
@@ -46,24 +47,20 @@ final class AuthImpl implements AuthInterFace {
       );
       return userCredential;
     } catch (e) {
-      // Hata oluştuğunda yapılacak işlemler
-      print('Hata: $e');
-      rethrow; // Hatanın yukarıya fırlatılması (yalnızca gerekirse)
+      throw const CustomException(
+        'E-posta adresi zaten kullanımda. Lütfen başka bir e-posta adresi deneyin.',
+      );
     }
   }
 
   @override
   Future<GoogleSignInAccount> googleSignIn() async {
-    try {
-      final googleUser = await _googleSignIn.signIn();
-      if (googleUser == null) {
-        throw 'Google Sign In işlemi iptal edildi';
-      }
-      return googleUser;
-    } catch (e) {
-      // Hata oluştuğunda yapılacak işlemler
-      print('Hata: $e');
-      rethrow;
+    final googleUser = await _googleSignIn.signIn();
+    if (googleUser == null) {
+      throw const CustomException(
+        'Google hesabı ile giriş yaparken hata oluştu',
+      );
     }
+    return googleUser;
   }
 }
