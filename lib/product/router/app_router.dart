@@ -24,8 +24,5 @@ final class AppRouter extends $AppRouter {
           page: HomeRoute.page,
           path: NavigationEnum.homeView.value,
         ),
-        AdaptiveRoute(
-          page: DevemeRoute.page,
-        ),
       ];
 }

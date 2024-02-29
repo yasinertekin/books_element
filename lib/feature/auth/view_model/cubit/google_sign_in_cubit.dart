@@ -15,7 +15,7 @@ final class GoogleSignInCubit extends Cubit<GoogleSignInState>
   Future<void> googleSignIn(BuildContext context) async {
     emit(const GoogleSignInState.loading());
     try {
-      final googleUser = await _googleSignInUseCase.googleSignIn();
+      await _googleSignInUseCase.googleSignIn();
       emit(const GoogleSignInState.success());
     } catch (e) {
       emit(GoogleSignInState.error('Hata: $e'));

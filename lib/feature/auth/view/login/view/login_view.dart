@@ -78,13 +78,15 @@ final class _LoginViewBody extends StatelessWidget {
               ),
               const CustomDivider(),
               SizedBox(
-                height: context.height * 0.1,
+                height: context.dynamicHeight(0.1),
                 width: context.width,
                 child: const SignInMethods(),
               ),
               const _RegisterButton(),
             ],
-          ).space(context.defaultValue),
+          ).space(
+            context.dynamicHeight(0.019),
+          ),
         ),
       ),
     );
