@@ -4,6 +4,7 @@ import 'package:bloc_example/product/core/extensions/contex_extension.dart';
 part 'widget/login_button.dart';
 part 'widget/register_button.dart';
 part 'widget/register_title.dart';
+part 'widget/register_view_background_image.dart';
 
 /// Register View
 @RoutePage()
@@ -50,57 +51,82 @@ final class _RegisterViewBody extends StatelessWidget {
     final passwordController = TextEditingController();
     final repeatPasswordController = TextEditingController();
 
-    return SingleChildScrollView(
-      child: Form(
-        key: formKey,
-        child: Stack(
-          children: [
-            Assets.images.imgHeader.image(),
-            Padding(
-              padding: context.paddingAllDefault.copyWith(
-                top: context.height * 0.13,
+    return Stack(
+      children: [
+        const _RegisterViewBackgroundImage(),
+        _RegisterForm(
+          emailController: emailController,
+          passwordController: passwordController,
+          repeatPasswordController: repeatPasswordController,
+          formKey: formKey,
+          registerCubit: registerCubit,
+        ),
+      ],
+    );
+  }
+}
+
+final class _RegisterForm extends StatelessWidget {
+  const _RegisterForm({
+    required this.emailController,
+    required this.passwordController,
+    required this.repeatPasswordController,
+    required this.formKey,
+    required this.registerCubit,
+  });
+
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
+  final TextEditingController repeatPasswordController;
+  final GlobalKey<FormState> formKey;
+  final RegisterCubit registerCubit;
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: formKey,
+      child: Padding(
+        padding: context.paddingAllDefault.copyWith(
+          top: context.height * 0.13,
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const _RegisterTitle(),
+              CustomTextField(
+                controller: emailController,
+                validatorText: LocaleKeys.textFields_mailValidation.tr(),
+                keyboardType: TextInputType.emailAddress,
+                labelText: LocaleKeys.textFields_email.tr(),
               ),
-              child: Column(
-                children: [
-                  const _RegisterTitle(),
-                  CustomTextField(
-                    controller: emailController,
-                    validatorText: LocaleKeys.textFields_mailValidation.tr(),
-                    keyboardType: TextInputType.emailAddress,
-                    labelText: LocaleKeys.textFields_email.tr(),
-                  ),
-                  CustomTextField(
-                    controller: passwordController,
-                    keyboardType: TextInputType.visiblePassword,
-                    labelText: LocaleKeys.textFields_password.tr(),
-                    validatorText:
-                        LocaleKeys.textFields_passwordValidation.tr(),
-                  ),
-                  CustomTextField(
-                    controller: repeatPasswordController,
-                    labelText: LocaleKeys.textFields_repeatPassword.tr(),
-                    validatorText:
-                        LocaleKeys.textFields_passwordValidation.tr(),
-                    keyboardType: TextInputType.visiblePassword,
-                    textInputAction: TextInputAction.done,
-                  ),
-                  _RegisterButton(
-                    formKey: formKey,
-                    registerCubit: registerCubit,
-                    emailController: emailController,
-                    passwordController: passwordController,
-                    repeatPasswordController: repeatPasswordController,
-                  ),
-                  const CustomDivider(),
-                  const SignInMethods(),
-                  const Text(LocaleKeys.register_alreadyHaveAccount).tr(),
-                  const _LogInButton(),
-                ],
-              ).space(
-                context.height * 0.02,
+              CustomTextField(
+                controller: passwordController,
+                keyboardType: TextInputType.visiblePassword,
+                labelText: LocaleKeys.textFields_password.tr(),
+                validatorText: LocaleKeys.textFields_passwordValidation.tr(),
               ),
-            ),
-          ],
+              CustomTextField(
+                controller: repeatPasswordController,
+                labelText: LocaleKeys.textFields_repeatPassword.tr(),
+                validatorText: LocaleKeys.textFields_passwordValidation.tr(),
+                keyboardType: TextInputType.visiblePassword,
+                textInputAction: TextInputAction.done,
+              ),
+              _RegisterButton(
+                formKey: formKey,
+                registerCubit: registerCubit,
+                emailController: emailController,
+                passwordController: passwordController,
+                repeatPasswordController: repeatPasswordController,
+              ),
+              const CustomDivider(),
+              const SignInMethods(),
+              const Text(LocaleKeys.register_alreadyHaveAccount).tr(),
+              const _LogInButton(),
+            ],
+          ).space(
+            context.dynamicHeight(0.02),
+          ),
         ),
       ),
     );

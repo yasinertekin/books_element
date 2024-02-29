@@ -21,6 +21,9 @@ final class StateInitialize extends StatelessWidget {
         BlocProvider(
           create: (context) => Locator.textFieldCubit,
         ),
+        BlocProvider(
+          create: (context) => Locator.googleSignInCubit,
+        ),
       ],
       child: child,
     );

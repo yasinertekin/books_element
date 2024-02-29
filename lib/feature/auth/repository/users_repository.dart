@@ -8,6 +8,9 @@ mixin UsersRepositoryMixin {
 
   /// signUpWithEmailAndPassword
   Future<void> signUpWithEmailAndPassword(Users users);
+
+  /// GoogleSignIn
+  Future<void> googleSignIn();
 }
 
 /// UsersRepository
@@ -27,5 +30,10 @@ final class UsersRepository with UsersRepositoryMixin {
   @override
   Future<void> signUpWithEmailAndPassword(Users users) async {
     await _authInterFace.signUpWithEmailAndPassword(users);
+  }
+
+  @override
+  Future<void> googleSignIn() {
+    return _authInterFace.googleSignIn();
   }
 }

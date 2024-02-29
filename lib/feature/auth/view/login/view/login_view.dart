@@ -15,6 +15,7 @@ final class LoginView extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {
           state.maybeWhen(
@@ -49,9 +50,9 @@ final class _LoginViewBody extends StatelessWidget {
 
     return Form(
       key: formKey,
-      child: Padding(
-        padding: context.paddingAllDefault,
-        child: SingleChildScrollView(
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: context.paddingAllLow,
           child: Column(
             children: [
               Assets.images.imgReadBook.image(),
@@ -76,10 +77,14 @@ final class _LoginViewBody extends StatelessWidget {
                 passwordController: passwordController,
               ),
               const CustomDivider(),
-              const SignInMethods(),
+              SizedBox(
+                height: context.height * 0.1,
+                width: context.width,
+                child: const SignInMethods(),
+              ),
               const _RegisterButton(),
             ],
-          ).space(context.lowValue),
+          ).space(context.defaultValue),
         ),
       ),
     );

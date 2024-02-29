@@ -1,3 +1,5 @@
+import 'package:bloc_example/feature/auth/use_case/google_sign_in_use_case.dart';
+import 'package:bloc_example/feature/auth/view_model/cubit/google_sign_in_cubit.dart';
 import 'package:bloc_example/index.dart';
 
 /// Locator
@@ -10,8 +12,12 @@ abstract final class Locator {
   /// Register Cubit
   static RegisterCubit get registerCubit => _instance<RegisterCubit>();
 
-  /// Counter Cubit
+  /// TextField Cubit
   static TextFieldCubit get textFieldCubit => _instance<TextFieldCubit>();
+
+  /// GoogleSignInCubit
+  static GoogleSignInCubit get googleSignInCubit =>
+      _instance<GoogleSignInCubit>();
 
   /// Setup
   static Future<void> setup() async {
@@ -40,6 +46,11 @@ abstract final class Locator {
           _instance(),
         ),
       )
+      ..registerFactory<GoogleSignInUseCase>(
+        () => GoogleSignInUseCase(
+          _instance(),
+        ),
+      )
 
       // Cubit'ler
       ..registerFactory<LoginCubit>(
@@ -52,6 +63,11 @@ abstract final class Locator {
       )
       ..registerFactory<RegisterCubit>(
         () => RegisterCubit(
+          _instance(),
+        ),
+      )
+      ..registerFactory<GoogleSignInCubit>(
+        () => GoogleSignInCubit(
           _instance(),
         ),
       );
