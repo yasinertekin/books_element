@@ -55,6 +55,9 @@ dependencies:
 
   # Google
   json_annotation: ^4.8.1
+  google_sign_in: ^6.2.1
+  google_sign_in_ios: ^5.7.4
+  flutter_signin_button: ^2.0.0
 
   # Utils
   logger: ^2.0.2+1
