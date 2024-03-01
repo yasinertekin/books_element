@@ -1,4 +1,4 @@
-import 'package:bloc_example/index.dart';
+import 'package:bloc_example/feature/index.dart';
 
 /// Extension for space between widgets
 extension SpaceBetweenWidgets on Column {

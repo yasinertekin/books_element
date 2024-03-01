@@ -1,4 +1,4 @@
-import 'package:bloc_example/index.dart';
+import 'package:bloc_example/feature/index.dart';
 import 'package:bloc_example/product/initialize/theme/app_theme/app_theme.dart';
 
 part 'style/button_style.dart';

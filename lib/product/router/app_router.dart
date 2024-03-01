@@ -1,4 +1,4 @@
-import 'package:bloc_example/index.dart';
+import 'package:bloc_example/feature/index.dart';
 import 'package:bloc_example/product/router/app_router.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'View,Route')

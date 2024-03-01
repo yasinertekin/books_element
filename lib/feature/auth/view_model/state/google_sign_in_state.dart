@@ -1,4 +1,4 @@
-import 'package:bloc_example/index.dart';
+import 'package:bloc_example/feature/index.dart';
 
 part 'google_sign_in_state.freezed.dart';
 

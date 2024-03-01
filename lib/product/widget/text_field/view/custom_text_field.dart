@@ -1,4 +1,4 @@
-import 'package:bloc_example/index.dart';
+import 'package:bloc_example/feature/index.dart';
 
 part 'decoration/input_decoration.dart';
 

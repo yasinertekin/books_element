@@ -1,4 +1,4 @@
-import 'package:bloc_example/index.dart';
+import 'package:bloc_example/feature/index.dart';
 
 /// Show Error Message Mixin
 mixin ShowErrorMessageMixin {

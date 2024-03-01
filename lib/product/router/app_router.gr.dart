@@ -14,8 +14,8 @@ import 'package:bloc_example/feature/auth/view/login/view/login_view.dart'
 import 'package:bloc_example/feature/auth/view/register/view/register_view.dart'
     as _i3;
 import 'package:bloc_example/feature/home/home_view.dart' as _i1;
+import 'package:bloc_example/feature/index.dart' as _i6;
 import 'package:bloc_example/feature/welcome/welcome_view.dart' as _i4;
-import 'package:bloc_example/index.dart' as _i6;
 
 abstract class $AppRouter extends _i5.RootStackRouter {
   $AppRouter({super.navigatorKey});

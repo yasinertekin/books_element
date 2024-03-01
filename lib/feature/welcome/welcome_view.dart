@@ -1,4 +1,4 @@
-import 'package:bloc_example/index.dart';
+import 'package:bloc_example/feature/index.dart';
 import 'package:bloc_example/product/core/extensions/contex_extension.dart';
 
 part 'widget/login_button.dart';

@@ -1,6 +1,6 @@
 import 'package:bloc_example/feature/auth/use_case/google_sign_in_use_case.dart';
 import 'package:bloc_example/feature/auth/view_model/cubit/google_sign_in_cubit.dart';
-import 'package:bloc_example/index.dart';
+import 'package:bloc_example/feature/index.dart';
 
 /// Locator
 abstract final class Locator {

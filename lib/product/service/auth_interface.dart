@@ -1,4 +1,4 @@
-import 'package:bloc_example/index.dart';
+import 'package:bloc_example/feature/index.dart';
 import 'package:bloc_example/product/utility/sign_in_exception.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 

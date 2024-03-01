@@ -1,6 +1,6 @@
 import 'package:bloc_example/feature/auth/use_case/google_sign_in_use_case.dart';
 import 'package:bloc_example/feature/auth/view_model/state/google_sign_in_state.dart';
-import 'package:bloc_example/index.dart';
+import 'package:bloc_example/feature/index.dart';
 
 /// GoogleSignInCubit
 final class GoogleSignInCubit extends Cubit<GoogleSignInState>

@@ -1,6 +1,6 @@
 import 'package:bloc_example/feature/auth/view_model/cubit/google_sign_in_cubit.dart';
 import 'package:bloc_example/feature/auth/view_model/state/google_sign_in_state.dart';
-import 'package:bloc_example/index.dart';
+import 'package:bloc_example/feature/index.dart';
 
 /// Sign In Methods
 final class SignInMethods extends StatelessWidget
