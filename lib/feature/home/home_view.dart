@@ -9,14 +9,8 @@ final class HomeView extends StatelessWidget with NavigationMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          navigateToNamedRoute(context, NavigationEnum.searchView.value);
-        },
-        child: const Icon(Icons.search),
-      ),
-      body: const Center(
+    return const Scaffold(
+      body: Center(
         child: Text(
           'Home',
           style: TextStyle(
