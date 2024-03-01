@@ -76,11 +76,7 @@ final class _LoginViewBody extends StatelessWidget {
                 passwordController: passwordController,
               ),
               const CustomDivider(),
-              SizedBox(
-                height: context.dynamicHeight(0.1),
-                width: context.width,
-                child: const SignInMethods(),
-              ),
+              const SignInMethods(),
               const _RegisterButton(),
             ],
           ).space(

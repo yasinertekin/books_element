@@ -2,6 +2,7 @@
 
 abstract class  LocaleKeys {
   static const login_title = 'login.title';
+  static const login_dontHaveAccount = 'login.dontHaveAccount';
   static const login = 'login';
   static const buttons_login = 'buttons.login';
   static const buttons_register = 'buttons.register';

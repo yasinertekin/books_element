@@ -13,7 +13,7 @@ final class _RegisterButton extends StatelessWidget with NavigationMixin {
           NavigationEnum.registerView.value,
         ),
         child: const Text(
-          LocaleKeys.register_alreadyHaveAccount,
+          LocaleKeys.login_dontHaveAccount,
         ).tr(),
       ),
     );

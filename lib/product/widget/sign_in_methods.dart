@@ -10,47 +10,51 @@ final class SignInMethods extends StatelessWidget
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<GoogleSignInCubit, GoogleSignInState>(
-      listener: (context, state) {
-        state.maybeWhen(
-          orElse: () {},
-          error: (message) => showErrorMessage(context, message),
-          success: () => navigateToNamedRoute(
-            context,
-            NavigationEnum.homeView.value,
-          ),
-        );
-      },
-      builder: (context, state) {
-        return state.maybeWhen(
-          orElse: () => Padding(
-            padding: context.paddingAllLow,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Expanded(
-                  child: OutlinedButton(
-                    onPressed: () {
-                      context.read<GoogleSignInCubit>().googleSignIn(
-                            context,
-                          );
-                    },
-                    child: const Text('Google'),
-                  ),
-                ),
-                SizedBox(width: context.dynamicWidth(0.02)),
-                Expanded(
-                  child: OutlinedButton(
-                    onPressed: () {},
-                    child: const Text('Facebook'),
-                  ),
-                ),
-              ],
+    return SizedBox(
+      height: context.dynamicHeight(0.1),
+      width: context.width,
+      child: BlocConsumer<GoogleSignInCubit, GoogleSignInState>(
+        listener: (context, state) {
+          state.maybeWhen(
+            orElse: () {},
+            error: (message) => showErrorMessage(context, message),
+            success: () => navigateToNamedRoute(
+              context,
+              NavigationEnum.homeView.value,
             ),
-          ),
-          loading: () => const CustomLoading(),
-        );
-      },
+          );
+        },
+        builder: (context, state) {
+          return state.maybeWhen(
+            orElse: () => Padding(
+              padding: context.paddingAllLow,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    child: OutlinedButton(
+                      onPressed: () {
+                        context.read<GoogleSignInCubit>().googleSignIn(
+                              context,
+                            );
+                      },
+                      child: const Text('Google'),
+                    ),
+                  ),
+                  SizedBox(width: context.dynamicWidth(0.02)),
+                  Expanded(
+                    child: OutlinedButton(
+                      onPressed: () {},
+                      child: const Text('Facebook'),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            loading: () => const CustomLoading(),
+          );
+        },
+      ),
     );
   }
 }

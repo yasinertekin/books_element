@@ -1,11 +1,13 @@
 {
     "login":{
-        "title":"Book Worm"
+        "title":"Book Worm",
+        "dontHaveAccount":"Yeni Bir Hesap Oluştur"
     },
     "buttons":{
         "login":"Giriş Yap",
         "register":"Kayıt Ol",
         "start":"Başla"
+        
        
     },
      "welcome":{
