@@ -1,6 +1,7 @@
 import 'package:bloc_example/feature/index.dart';
 import 'package:bloc_example/feature/search/view_model/cubit/books_cubit.dart';
 import 'package:bloc_example/feature/search/view_model/cubit/state/books_state.dart';
+import 'package:bloc_example/product/model/book/books/books.dart';
 
 @RoutePage()
 final class SearchView extends StatelessWidget {
@@ -24,15 +25,8 @@ final class SearchView extends StatelessWidget {
               error: state.error!,
             );
           } else if (state.books != null) {
-            return ListView.builder(
-              itemCount: state.books!.items!.length,
-              itemBuilder: (context, index) {
-                final item = state.books!.items![index];
-                return ListTile(
-                  title: Text(item.volumeInfo!.title!),
-                  subtitle: Text(item.volumeInfo!.authors!.join(', ')),
-                );
-              },
+            return _BookList(
+              books: state.books!,
             );
           } else {
             return const Center(
@@ -41,6 +35,29 @@ final class SearchView extends StatelessWidget {
           }
         },
       ),
+    );
+  }
+}
+
+final class _BookList extends StatelessWidget {
+  const _BookList({
+    required this.books,
+    super.key,
+  });
+
+  final Books books;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: books.items!.length,
+      itemBuilder: (context, index) {
+        final item = books.items![index];
+        return ListTile(
+          title: Text(item.volumeInfo!.title!),
+          subtitle: Text(item.volumeInfo!.authors!.join(', ')),
+        );
+      },
     );
   }
 }
