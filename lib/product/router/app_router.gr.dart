@@ -8,23 +8,24 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i6;
+import 'package:auto_route/auto_route.dart' as _i7;
 import 'package:bloc_example/feature/auth/view/login/view/login_view.dart'
     as _i2;
 import 'package:bloc_example/feature/auth/view/register/view/register_view.dart'
-    as _i3;
+    as _i4;
 import 'package:bloc_example/feature/home/home_view.dart' as _i1;
-import 'package:bloc_example/feature/index.dart' as _i7;
-import 'package:bloc_example/feature/search/search_view.dart' as _i4;
-import 'package:bloc_example/feature/welcome/welcome_view.dart' as _i5;
+import 'package:bloc_example/feature/index.dart' as _i8;
+import 'package:bloc_example/feature/nav_bar/nav_bar_view.dart' as _i3;
+import 'package:bloc_example/feature/search/view/search_view.dart' as _i5;
+import 'package:bloc_example/feature/welcome/welcome_view.dart' as _i6;
 
-abstract class $AppRouter extends _i6.RootStackRouter {
+abstract class $AppRouter extends _i7.RootStackRouter {
   $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i6.PageFactory> pagesMap = {
+  final Map<String, _i7.PageFactory> pagesMap = {
     HomeRoute.name: (routeData) {
-      return _i6.AutoRoutePage<dynamic>(
+      return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i1.HomeView(),
       );
@@ -32,27 +33,33 @@ abstract class $AppRouter extends _i6.RootStackRouter {
     LoginRoute.name: (routeData) {
       final args = routeData.argsAs<LoginRouteArgs>(
           orElse: () => const LoginRouteArgs());
-      return _i6.AutoRoutePage<dynamic>(
+      return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i2.LoginView(key: args.key),
       );
     },
-    RegisterRoute.name: (routeData) {
-      return _i6.AutoRoutePage<dynamic>(
+    NavBarRoute.name: (routeData) {
+      return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i3.RegisterView(),
+        child: const _i3.NavBarView(),
+      );
+    },
+    RegisterRoute.name: (routeData) {
+      return _i7.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i4.RegisterView(),
       );
     },
     SearchRoute.name: (routeData) {
-      return _i6.AutoRoutePage<dynamic>(
+      return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i4.SearchView(),
+        child: const _i5.SearchView(),
       );
     },
     WelcomeRoute.name: (routeData) {
-      return _i6.AutoRoutePage<dynamic>(
+      return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i5.WelcomeView(),
+        child: const _i6.WelcomeView(),
       );
     },
   };
@@ -60,8 +67,8 @@ abstract class $AppRouter extends _i6.RootStackRouter {
 
 /// generated route for
 /// [_i1.HomeView]
-class HomeRoute extends _i6.PageRouteInfo<void> {
-  const HomeRoute({List<_i6.PageRouteInfo>? children})
+class HomeRoute extends _i7.PageRouteInfo<void> {
+  const HomeRoute({List<_i7.PageRouteInfo>? children})
       : super(
           HomeRoute.name,
           initialChildren: children,
@@ -69,15 +76,15 @@ class HomeRoute extends _i6.PageRouteInfo<void> {
 
   static const String name = 'HomeRoute';
 
-  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
+  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i2.LoginView]
-class LoginRoute extends _i6.PageRouteInfo<LoginRouteArgs> {
+class LoginRoute extends _i7.PageRouteInfo<LoginRouteArgs> {
   LoginRoute({
-    _i7.Key? key,
-    List<_i6.PageRouteInfo>? children,
+    _i8.Key? key,
+    List<_i7.PageRouteInfo>? children,
   }) : super(
           LoginRoute.name,
           args: LoginRouteArgs(key: key),
@@ -86,14 +93,14 @@ class LoginRoute extends _i6.PageRouteInfo<LoginRouteArgs> {
 
   static const String name = 'LoginRoute';
 
-  static const _i6.PageInfo<LoginRouteArgs> page =
-      _i6.PageInfo<LoginRouteArgs>(name);
+  static const _i7.PageInfo<LoginRouteArgs> page =
+      _i7.PageInfo<LoginRouteArgs>(name);
 }
 
 class LoginRouteArgs {
   const LoginRouteArgs({this.key});
 
-  final _i7.Key? key;
+  final _i8.Key? key;
 
   @override
   String toString() {
@@ -102,9 +109,23 @@ class LoginRouteArgs {
 }
 
 /// generated route for
-/// [_i3.RegisterView]
-class RegisterRoute extends _i6.PageRouteInfo<void> {
-  const RegisterRoute({List<_i6.PageRouteInfo>? children})
+/// [_i3.NavBarView]
+class NavBarRoute extends _i7.PageRouteInfo<void> {
+  const NavBarRoute({List<_i7.PageRouteInfo>? children})
+      : super(
+          NavBarRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'NavBarRoute';
+
+  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i4.RegisterView]
+class RegisterRoute extends _i7.PageRouteInfo<void> {
+  const RegisterRoute({List<_i7.PageRouteInfo>? children})
       : super(
           RegisterRoute.name,
           initialChildren: children,
@@ -112,13 +133,13 @@ class RegisterRoute extends _i6.PageRouteInfo<void> {
 
   static const String name = 'RegisterRoute';
 
-  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
+  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i4.SearchView]
-class SearchRoute extends _i6.PageRouteInfo<void> {
-  const SearchRoute({List<_i6.PageRouteInfo>? children})
+/// [_i5.SearchView]
+class SearchRoute extends _i7.PageRouteInfo<void> {
+  const SearchRoute({List<_i7.PageRouteInfo>? children})
       : super(
           SearchRoute.name,
           initialChildren: children,
@@ -126,13 +147,13 @@ class SearchRoute extends _i6.PageRouteInfo<void> {
 
   static const String name = 'SearchRoute';
 
-  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
+  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i5.WelcomeView]
-class WelcomeRoute extends _i6.PageRouteInfo<void> {
-  const WelcomeRoute({List<_i6.PageRouteInfo>? children})
+/// [_i6.WelcomeView]
+class WelcomeRoute extends _i7.PageRouteInfo<void> {
+  const WelcomeRoute({List<_i7.PageRouteInfo>? children})
       : super(
           WelcomeRoute.name,
           initialChildren: children,
@@ -140,5 +161,5 @@ class WelcomeRoute extends _i6.PageRouteInfo<void> {
 
   static const String name = 'WelcomeRoute';
 
-  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
+  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
 }

@@ -13,13 +13,15 @@ final class _NavigationConstants {
   static const String registerView = '/register';
 
   /// Home View
-  static const String homeView = '/home';
+  static const String homeView = 'home';
 
   /// Welcome View
-  static const String welcomeView = '/';
+  static const String welcomeView = '/welcome-view';
 
   /// Search View
-  static const String sarchView = '/search';
+  static const String sarchView = 'search';
+
+  static const String navBarView = '/nav-bar';
 }
 
 /// Navigation Enum
@@ -47,6 +49,11 @@ enum NavigationEnum {
   /// Search View
   searchView(
     _NavigationConstants.sarchView,
+  ),
+
+  /// NavBar View
+  navBarView(
+    _NavigationConstants.navBarView,
   );
 
   /// Value

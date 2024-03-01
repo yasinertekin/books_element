@@ -20,7 +20,7 @@ final class SignInMethods extends StatelessWidget
             error: (message) => showErrorMessage(context, message),
             success: () => navigateToNamedRoute(
               context,
-              NavigationEnum.homeView.value,
+              NavigationEnum.navBarView.value,
             ),
           );
         },

@@ -1,6 +1,5 @@
 import 'package:bloc_example/feature/index.dart';
 import 'package:bloc_example/product/router/app_router.gr.dart';
-import 'package:bloc_example/product/router/auth_guard.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'View,Route')
 
@@ -9,9 +8,7 @@ final class AppRouter extends $AppRouter {
   @override
   List<AdaptiveRoute> get routes => [
         AdaptiveRoute(
-          initial: true,
           page: WelcomeRoute.page,
-          guards: [AuthGuard()],
           path: NavigationEnum.welcomeView.value,
         ),
         AdaptiveRoute(
@@ -23,12 +20,19 @@ final class AppRouter extends $AppRouter {
           path: NavigationEnum.registerView.value,
         ),
         AdaptiveRoute(
-          page: HomeRoute.page,
-          path: NavigationEnum.homeView.value,
-        ),
-        AdaptiveRoute(
-          page: SearchRoute.page,
-          path: NavigationEnum.searchView.value,
+          initial: true,
+          page: NavBarRoute.page,
+          path: NavigationEnum.navBarView.value,
+          children: [
+            AdaptiveRoute(
+              page: HomeRoute.page,
+              path: NavigationEnum.homeView.value,
+            ),
+            AdaptiveRoute(
+              page: SearchRoute.page,
+              path: NavigationEnum.searchView.value,
+            ),
+          ],
         ),
       ];
 }
