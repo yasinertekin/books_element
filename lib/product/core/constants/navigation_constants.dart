@@ -17,6 +17,9 @@ final class _NavigationConstants {
 
   /// Welcome View
   static const String welcomeView = '/';
+
+  /// Search View
+  static const String sarchView = '/search';
 }
 
 /// Navigation Enum
@@ -39,6 +42,11 @@ enum NavigationEnum {
   /// Welcome View
   welcomeView(
     _NavigationConstants.welcomeView,
+  ),
+
+  /// Search View
+  searchView(
+    _NavigationConstants.sarchView,
   );
 
   /// Value
