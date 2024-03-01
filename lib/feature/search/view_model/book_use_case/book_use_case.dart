@@ -1,4 +1,4 @@
-import 'package:bloc_example/feature/search/repository/books_repository.dart';
+import 'package:bloc_example/feature/search/view_model/repository/books_repository.dart';
 import 'package:bloc_example/product/model/book/books/books.dart';
 
 /// Books UseCase

@@ -1,6 +1,6 @@
 import 'package:bloc_example/feature/index.dart';
-import 'package:bloc_example/feature/search/book_use_case/book_use_case.dart';
-import 'package:bloc_example/feature/search/cubit/state/books_state.dart';
+import 'package:bloc_example/feature/search/view_model/book_use_case/book_use_case.dart';
+import 'package:bloc_example/feature/search/view_model/cubit/state/books_state.dart';
 
 final class BooksCubit extends Cubit<BooksState> {
   BooksCubit(this._booksUseCase) : super(const BooksState());

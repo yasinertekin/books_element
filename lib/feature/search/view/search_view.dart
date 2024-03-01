@@ -1,6 +1,6 @@
 import 'package:bloc_example/feature/index.dart';
-import 'package:bloc_example/feature/search/cubit/books_cubit.dart';
-import 'package:bloc_example/feature/search/cubit/state/books_state.dart';
+import 'package:bloc_example/feature/search/view_model/cubit/books_cubit.dart';
+import 'package:bloc_example/feature/search/view_model/cubit/state/books_state.dart';
 
 @RoutePage()
 final class SearchView extends StatelessWidget {
@@ -18,12 +18,10 @@ final class SearchView extends StatelessWidget {
       body: BlocBuilder<BooksCubit, BooksState>(
         builder: (context, state) {
           if (state.isLoding) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
+            return const CustomLoading();
           } else if (state.error != null) {
-            return Center(
-              child: Text('${state.error} haa'),
+            return _ErrorText(
+              error: state.error!,
             );
           } else if (state.books != null) {
             return ListView.builder(
@@ -43,6 +41,22 @@ final class SearchView extends StatelessWidget {
           }
         },
       ),
+    );
+  }
+}
+
+final class _ErrorText extends StatelessWidget {
+  const _ErrorText({
+    required this.error,
+    super.key,
+  });
+
+  final String error;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(error),
     );
   }
 }
