@@ -5,6 +5,7 @@ part 'users.freezed.dart';
 @freezed
 
 /// Users Model Class
+@immutable
 class Users with _$Users {
   /// Users Factory
   const factory Users({
