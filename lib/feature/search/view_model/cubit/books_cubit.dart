@@ -3,7 +3,9 @@ import 'package:bloc_example/feature/search/view_model/book_use_case/book_use_ca
 import 'package:bloc_example/feature/search/view_model/cubit/state/books_state.dart';
 
 final class BooksCubit extends Cubit<BooksState> {
-  BooksCubit(this._booksUseCase) : super(const BooksState());
+  BooksCubit(this._booksUseCase) : super(const BooksState()) {
+    getBooks('Flutter');
+  }
 
   final BooksUseCase _booksUseCase;
 
@@ -19,3 +21,4 @@ final class BooksCubit extends Cubit<BooksState> {
     }
   }
 }
+// GET https://www.googleapis.com/books/v1/volumes?q=subject:police+OR+mystery&langRestrict=en
