@@ -11,26 +11,26 @@ abstract class BookService {
   /// Fetch books from the Google Books API
   Future<Books> getBooks(String query);
 
+  /// Fetch Books by Category
+  Future<Books> getBooksByCategory(String category);
+
   /// The Dio service
   final Dio service;
 }
 
 /// Implementation of [BookService]
-final class BookServiceImpl extends BookService {
+final class BookServiceImpl extends BookService with Fetcher {
   /// Implementation of [BookService]
   BookServiceImpl({required super.service});
 
   @override
   Future<Books> getBooks(String query) async {
-    final response = await service.get<Map<String, dynamic>>(
-      query,
-    );
-    if (response.statusCode == HttpStatus.ok) {
-      final responseData = response.data!;
-      return Books.fromJson(responseData);
-    } else {
-      throw Exception('Failed to load books');
-    }
+    return fetch('subject:police+OR+mystery');
+  }
+
+  @override
+  Future<Books> getBooksByCategory(String category) {
+    return fetch('subject:police+OR+mystery');
   }
 }
 
@@ -43,4 +43,18 @@ enum ServiceUrl {
 
   /// The service URL
   final String value;
+}
+
+mixin Fetcher on BookService {
+  Future<Books> fetch(String query) async {
+    final response = await service.get<Map<String, dynamic>>(
+      query,
+    );
+    if (response.statusCode == HttpStatus.ok) {
+      final responseData = response.data!;
+      return Books.fromJson(responseData);
+    } else {
+      throw Exception('Failed to load books');
+    }
+  }
 }
