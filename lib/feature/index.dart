@@ -24,6 +24,7 @@ export 'package:bloc_example/product/mixin/show_error_message.dart';
 export 'package:bloc_example/product/model/users.dart';
 export 'package:bloc_example/product/router/app_router.dart';
 export 'package:bloc_example/product/service/auth_interface.dart';
+export 'package:bloc_example/product/service/books_service.dart';
 export 'package:bloc_example/product/widget/custom_divider.dart';
 export 'package:bloc_example/product/widget/custom_loading.dart';
 export 'package:bloc_example/product/widget/sign_in_methods.dart';
@@ -31,6 +32,7 @@ export 'package:bloc_example/product/widget/text_field/view/custom_text_field.da
 export 'package:bloc_example/product/widget/text_field/view_model/cubit/custom_text_field_cubit.dart';
 export 'package:bloc_example/product/widget/text_field/view_model/mixin/custom_text_field_mixin.dart';
 export 'package:bloc_example/product/widget/text_field/view_model/state/text_field_state.dart';
+export 'package:dio/dio.dart';
 export 'package:easy_localization/easy_localization.dart' hide TextDirection;
 export 'package:equatable/equatable.dart';
 export 'package:firebase_auth/firebase_auth.dart';

@@ -4,9 +4,7 @@ import 'package:bloc_example/feature/index.dart';
 import 'package:bloc_example/feature/search/view_model/book_use_case/book_use_case.dart';
 import 'package:bloc_example/feature/search/view_model/cubit/books_cubit.dart';
 import 'package:bloc_example/feature/search/view_model/repository/books_repository.dart';
-import 'package:bloc_example/product/service/books_service.dart';
 import 'package:bloc_example/product/service/dio_manager.dart';
-import 'package:dio/dio.dart';
 
 /// Locator
 abstract final class Locator {
@@ -36,7 +34,7 @@ abstract final class Locator {
         AuthImpl.new,
       )
       ..registerFactory<Dio>(
-        DioManager.DioService,
+        () => DioManager().dio,
       )
       ..registerFactory<AuthImpl>(
         AuthImpl.new,
