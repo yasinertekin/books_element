@@ -12,6 +12,8 @@ final class CustomTextField extends StatefulWidget {
     this.validatorText = 'Please enter some text',
     this.keyboardType = TextInputType.text,
     this.textInputAction = TextInputAction.next,
+    this.inputDecoration,
+    this.onFieldSubmitted,
   });
 
   /// Controller
@@ -29,6 +31,12 @@ final class CustomTextField extends StatefulWidget {
   /// Validator Text
   final String validatorText;
 
+  /// On Field Submitted
+  final ValueChanged<String>? onFieldSubmitted;
+
+  /// Input Decoration
+  final InputDecoration? inputDecoration;
+
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
 }
@@ -41,6 +49,7 @@ final class _CustomTextFieldState extends State<CustomTextField>
       bloc: textFieldCubit,
       builder: (context, state) {
         return TextFormField(
+          onFieldSubmitted: widget.onFieldSubmitted,
           keyboardType: widget.keyboardType,
           obscureText: widget.keyboardType == TextInputType.visiblePassword &&
               !state.isObscure,
@@ -48,11 +57,12 @@ final class _CustomTextFieldState extends State<CustomTextField>
           textInputAction: widget.textInputAction,
           validator: _returnValidate,
           controller: controller,
-          decoration: _InputDecoration(
-            widget.labelText,
-            widget.keyboardType,
-            textFieldCubit,
-          ),
+          decoration: widget.inputDecoration ??
+              _InputDecoration(
+                widget.labelText,
+                widget.keyboardType,
+                textFieldCubit,
+              ),
         );
       },
     );
