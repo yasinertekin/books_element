@@ -19,6 +19,16 @@ class $AssetsColorsGen {
   List<String> get values => [colors];
 }
 
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/ic_no_image.svg
+  String get icNoImage => 'assets/icons/ic_no_image.svg';
+
+  /// List of all assets
+  List<String> get values => [icNoImage];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -60,6 +70,7 @@ class Assets {
   Assets._();
 
   static const $AssetsColorsGen colors = $AssetsColorsGen();
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsTranslationsGen translations = $AssetsTranslationsGen();
 }

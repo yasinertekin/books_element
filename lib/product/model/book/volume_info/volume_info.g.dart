@@ -25,7 +25,7 @@ VolumeInfo _$VolumeInfoFromJson(Map<String, dynamic> json) => VolumeInfo(
       categories: (json['categories'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-      averageRating: json['averageRating'] as int?,
+      averageRating: (json['averageRating'] as num?)?.toDouble(),
       ratingsCount: json['ratingsCount'] as int?,
       maturityRating: json['maturityRating'] as String?,
       allowAnonLogging: json['allowAnonLogging'] as bool?,

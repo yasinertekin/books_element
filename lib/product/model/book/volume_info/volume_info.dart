@@ -59,7 +59,7 @@ final class VolumeInfo extends Equatable {
   @JsonKey(name: 'categories')
   final List<String>? categories;
   @JsonKey(name: 'averageRating')
-  final int? averageRating;
+  final double? averageRating;
   @JsonKey(name: 'ratingsCount')
   final int? ratingsCount;
   @JsonKey(name: 'maturityRating')
@@ -93,7 +93,7 @@ final class VolumeInfo extends Equatable {
     int? pageCount,
     String? printType,
     List<String>? categories,
-    int? averageRating,
+    double? averageRating,
     int? ratingsCount,
     String? maturityRating,
     bool? allowAnonLogging,
