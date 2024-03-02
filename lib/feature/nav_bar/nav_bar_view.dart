@@ -10,8 +10,8 @@ final class NavBarView extends StatelessWidget {
     final Key myWidgetKey = UniqueKey();
 
     return AutoTabsScaffold(
-      routes: const [
-        SearchRoute(),
+      routes: [
+        const SearchRoute(),
         HomeRoute(),
       ],
       bottomNavigationBuilder: (_, tabsRouter) {
