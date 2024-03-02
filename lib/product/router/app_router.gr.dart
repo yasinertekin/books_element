@@ -25,9 +25,11 @@ abstract class $AppRouter extends _i7.RootStackRouter {
   @override
   final Map<String, _i7.PageFactory> pagesMap = {
     HomeRoute.name: (routeData) {
+      final args =
+          routeData.argsAs<HomeRouteArgs>(orElse: () => const HomeRouteArgs());
       return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i1.HomeView(),
+        child: _i1.HomeView(key: args.key),
       );
     },
     LoginRoute.name: (routeData) {
@@ -67,16 +69,31 @@ abstract class $AppRouter extends _i7.RootStackRouter {
 
 /// generated route for
 /// [_i1.HomeView]
-class HomeRoute extends _i7.PageRouteInfo<void> {
-  const HomeRoute({List<_i7.PageRouteInfo>? children})
-      : super(
+class HomeRoute extends _i7.PageRouteInfo<HomeRouteArgs> {
+  HomeRoute({
+    _i8.Key? key,
+    List<_i7.PageRouteInfo>? children,
+  }) : super(
           HomeRoute.name,
+          args: HomeRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'HomeRoute';
 
-  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
+  static const _i7.PageInfo<HomeRouteArgs> page =
+      _i7.PageInfo<HomeRouteArgs>(name);
+}
+
+class HomeRouteArgs {
+  const HomeRouteArgs({this.key});
+
+  final _i8.Key? key;
+
+  @override
+  String toString() {
+    return 'HomeRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
