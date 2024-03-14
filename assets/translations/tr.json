@@ -29,6 +29,17 @@
     },
     "divider":{
         "or":"veya"
+    },
+       "navbar":{
+        "home":"Ana Sayfa",
+        "search":"Kitap Ara",
+        "profile":"Profilim"
+    },
+        "home":{
+        "title":"Readium'a Hoşgeldiniz",
+        "favorite_books":"Favori Kitaplarınız",
+        "recommended_books":"Önerilen Kitaplar"
+    
     }
 
     

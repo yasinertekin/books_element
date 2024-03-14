@@ -31,7 +31,18 @@
     },
     "divider":{
         "or":"or"
+    },
+    "navbar":{
+        "home":"Home",
+        "search":"Search",
+        "profile":"Profile"
+    },
+    "home":{
+        "title":"Welcome to Readium",
+        "favorite_books":"Favorite Books",
+        "recommended_books":"Recommended Books"
+    
+    }
     }
 
     
-}
