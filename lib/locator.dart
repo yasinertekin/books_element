@@ -1,14 +1,22 @@
-import 'package:bloc_example/feature/auth/use_case/google_sign_in_use_case.dart';
-import 'package:bloc_example/feature/auth/view_model/cubit/google_sign_in_cubit.dart';
+import 'package:bloc_example/feature/auth/domain/usecases/uc_google_sign_in.dart';
+import 'package:bloc_example/feature/auth/presentation/view_model/cubit/google_sign_in_cubit.dart';
+import 'package:bloc_example/feature/home/domain/repository/favorite_book_repository.dart';
+import 'package:bloc_example/feature/home/domain/use_cases/uc_add_favorite_book.dart';
+import 'package:bloc_example/feature/home/domain/use_cases/uc_delete_favorite_book.dart';
+import 'package:bloc_example/feature/home/domain/use_cases/uc_get_favorite_book.dart';
+import 'package:bloc_example/feature/home/presentation/cubit/home_cubit.dart';
 import 'package:bloc_example/feature/index.dart';
-import 'package:bloc_example/feature/search/view_model/book_use_case/book_use_case.dart';
-import 'package:bloc_example/feature/search/view_model/cubit/books_cubit.dart';
-import 'package:bloc_example/feature/search/view_model/repository/books_repository.dart';
-import 'package:bloc_example/product/service/dio_manager.dart';
+import 'package:bloc_example/feature/search/domain/book_use_case/uc_search_book.dart';
+import 'package:bloc_example/feature/search/domain/books_repository/books_repository.dart';
+import 'package:bloc_example/feature/search/presentation/view_model/cubit/search_books_cubit.dart';
+import 'package:bloc_example/product/core/dio_manager.dart';
+import 'package:bloc_example/product/service/firebase/books/firebase_book_service.dart';
 
 /// Locator
 abstract final class Locator {
   static final _instance = GetIt.instance;
+
+  static HomeCubit get homeCubit => _instance<HomeCubit>();
 
   /// Login Cubit
   static LoginCubit get loginCubit => _instance<LoginCubit>();
@@ -24,7 +32,10 @@ abstract final class Locator {
       _instance<GoogleSignInCubit>();
 
   /// BooksCubit
-  static BooksCubit get booksCubit => _instance<BooksCubit>();
+  static SearchBooksCubit get booksCubit => _instance<SearchBooksCubit>();
+
+  /// App Router
+  static AppRouter get appRouter => _instance<AppRouter>();
 
   /// Setup
   static Future<void> setup() async {
@@ -40,12 +51,15 @@ abstract final class Locator {
         AuthImpl.new,
       )
       ..registerFactory<UsersRepository>(
-        () => UsersRepository(
-          _instance(),
-        ),
+        () => UsersRepository(_instance()),
       )
-      ..registerFactory<BooksRepository>(
-        () => BooksRepositoryImpl(bookService: _instance()),
+      ..registerFactory<SearchBookRepository>(
+        () => SearchBookRepositoryImpl(bookService: _instance()),
+      )
+      ..registerFactory<IFavoriteBookRepository>(
+        () => FavoriteBookRepositoryImpl(
+          firebaseBookService: _instance(),
+        ),
       )
 
       // Use Case'ler
@@ -64,13 +78,36 @@ abstract final class Locator {
           _instance(),
         ),
       )
-      ..registerFactory<BooksUseCase>(
-        () => BooksUseCaseImpl(
+      ..registerFactory<UCSearchBookUseCase>(
+        () => UCSearchBookUseCaseImpl(
           booksRepository: _instance(),
+        ),
+      )
+      ..registerFactory<IUCAddFavoriteBookUseCase>(
+        () => IUCAddFavoriteBookUseCaseImpl(
+          favoriteBookRepository: _instance(),
+        ),
+      )
+      ..registerFactory<IUCDeleteFavoriteBook>(
+        () => IUCDeleteFavoriteBookImpl(
+          favoriteBookRepository: _instance(),
+        ),
+      )
+      ..registerFactory<UCGetFavoriteBook>(
+        () => GetFavoriteBook(
+          favoriteBookRepository: _instance(),
         ),
       )
 
       // Cubit'ler
+
+      ..registerFactory<HomeCubit>(
+        () => HomeCubit(
+          _instance(),
+          _instance(),
+          _instance(),
+        ),
+      )
       ..registerFactory<LoginCubit>(
         () => LoginCubit(
           _instance(),
@@ -90,16 +127,20 @@ abstract final class Locator {
         ),
       )
 
-      /// bOOK Service
+      /// Book Service
       ..registerFactory<BookService>(
         () => BookServiceImpl(
           service: _instance(),
         ),
       )
-      ..registerFactory<BooksCubit>(
-        () => BooksCubit(
+      ..registerFactory<SearchBooksCubit>(
+        () => SearchBooksCubit(
           _instance(),
         ),
-      );
+      )
+      ..registerFactory<IFirebaseBookService>(
+        FirebaseBookService.new,
+      )
+      ..registerFactory<AppRouter>(AppRouter.new);
   }
 }
