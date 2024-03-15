@@ -1,14 +1,11 @@
-import 'package:bloc_example/feature/auth/domain/usecases/uc_google_sign_in.dart';
 import 'package:bloc_example/feature/auth/presentation/view_model/cubit/google_sign_in_cubit.dart';
 import 'package:bloc_example/feature/home/domain/repository/favorite_book_repository.dart';
 import 'package:bloc_example/feature/home/domain/use_cases/uc_add_favorite_book.dart';
 import 'package:bloc_example/feature/home/domain/use_cases/uc_delete_favorite_book.dart';
 import 'package:bloc_example/feature/home/domain/use_cases/uc_get_favorite_book.dart';
-import 'package:bloc_example/feature/home/presentation/cubit/home_cubit.dart';
 import 'package:bloc_example/feature/index.dart';
 import 'package:bloc_example/feature/search/domain/book_use_case/uc_search_book.dart';
 import 'package:bloc_example/feature/search/domain/books_repository/books_repository.dart';
-import 'package:bloc_example/feature/search/presentation/view_model/cubit/search_books_cubit.dart';
 import 'package:bloc_example/product/core/dio_manager.dart';
 import 'package:bloc_example/product/service/firebase/books/firebase_book_service.dart';
 
