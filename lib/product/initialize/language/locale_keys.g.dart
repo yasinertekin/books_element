@@ -23,5 +23,13 @@ abstract class  LocaleKeys {
   static const textFields = 'textFields';
   static const divider_or = 'divider.or';
   static const divider = 'divider';
+  static const navbar_home = 'navbar.home';
+  static const navbar_search = 'navbar.search';
+  static const navbar_profile = 'navbar.profile';
+  static const navbar = 'navbar';
+  static const home_title = 'home.title';
+  static const home_favorite_books = 'home.favorite_books';
+  static const home_recommended_books = 'home.recommended_books';
+  static const home = 'home';
 
 }
