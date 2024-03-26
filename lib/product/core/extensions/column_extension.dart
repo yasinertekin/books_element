@@ -1,4 +1,5 @@
 import 'package:bloc_example/feature/index.dart';
+import 'package:bloc_example/product/widget/custom_sized_box.dart';
 
 /// Extension for space between widgets
 extension SpaceBetweenWidgets on Column {
@@ -17,7 +18,7 @@ extension SpaceBetweenWidgets on Column {
           if (index.isEven) {
             return children[index ~/ 2];
           } else {
-            return SizedBox(height: spaceAmount);
+            return CustomSizedBox(height: spaceAmount);
           }
         },
       ),
