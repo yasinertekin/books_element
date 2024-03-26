@@ -17,11 +17,11 @@ Features
 ## Preview
 
 <p>
+    <img src="screenshots/login.png" width="19%"/>
+    <img src="screenshots/register.png" width="19%"/>
     <img src="screenshots/home.png" width="19%"/>
-    <img src="screenshots/pinned.png" width="19%"/>
     <img src="screenshots/detail.png" width="19%"/>
-    <img src="screenshots/pdf.png" width="19%"/>
-    <img src="screenshots/crop.png" width="19%"/>
+    <img src="screenshots/search.png" width="19%"/>
 </p>
 
 ## Packages
@@ -45,7 +45,7 @@ Features
 - Network
   - [Dio](https://pub.dev/packages/dio)
 - Localizations
- - [Easy Localization](https://pub.dev/packages/easy_localization)
+  - [Easy Localization](https://pub.dev/packages/easy_localization)
   
 
 
