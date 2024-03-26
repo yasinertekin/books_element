@@ -1,16 +1,13 @@
 part of '../welcome_view.dart';
 
-final class _LoginButton extends StatelessWidget with NavigationMixin {
+final class _LoginButton extends StatelessWidget {
   const _LoginButton();
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
-        navigateToNamedRoute(
-          context,
-          NavigationEnum.loginView.value,
-        );
+        context.navigateToNamedRoute(NavigationEnum.loginView.value);
       },
       child: Text(
         LocaleKeys.buttons_login,
