@@ -44,13 +44,27 @@ class $AssetsImagesGen {
   AssetGenImage get imgReadBook =>
       const AssetGenImage('assets/images/img_read_book.png');
 
+  /// File path: assets/images/img_star.png
+  AssetGenImage get imgStar =>
+      const AssetGenImage('assets/images/img_star.png');
+
+  /// File path: assets/images/img_vertical_divider.png
+  AssetGenImage get imgVerticalDivider =>
+      const AssetGenImage('assets/images/img_vertical_divider.png');
+
   /// File path: assets/images/img_welcome.png
   AssetGenImage get imgWelcome =>
       const AssetGenImage('assets/images/img_welcome.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [imgHeader, imgHorizantalDivider, imgReadBook, imgWelcome];
+  List<AssetGenImage> get values => [
+        imgHeader,
+        imgHorizantalDivider,
+        imgReadBook,
+        imgStar,
+        imgVerticalDivider,
+        imgWelcome
+      ];
 }
 
 class $AssetsTranslationsGen {

@@ -61,6 +61,9 @@ class ColorName {
   /// Color: #FFFFFF
   static const Color colorWhite = Color(0xFFFFFFFF);
 
+  /// Color: #F2E9D3
+  static const Color colorWhiteFence = Color(0xFFF2E9D3);
+
   /// Color: #F5CB84
   static const Color milkTea = Color(0xFFF5CB84);
 
