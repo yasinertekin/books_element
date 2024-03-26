@@ -25,12 +25,12 @@ final class BookServiceImpl extends BookService with Fetcher {
 
   @override
   Future<Books> getBooks(String query) async {
-    return fetch('subject:police+OR+mystery');
+    return fetch(query);
   }
 
   @override
   Future<Books> getBooksByCategory(String category) {
-    return fetch('subject:police+OR+mystery');
+    return fetch(category);
   }
 }
 
@@ -45,7 +45,7 @@ enum ServiceUrl {
   final String value;
 }
 
-mixin Fetcher on BookService {
+base mixin Fetcher on BookService {
   Future<Books> fetch(String query) async {
     final response = await service.get<Map<String, dynamic>>(
       query,

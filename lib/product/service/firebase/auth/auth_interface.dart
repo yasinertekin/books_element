@@ -1,6 +1,5 @@
 import 'package:bloc_example/feature/index.dart';
-import 'package:bloc_example/product/utility/sign_in_exception.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+import 'package:bloc_example/product/core/utility/sign_in_exception.dart';
 
 /// AuthInterFace
 abstract class AuthInterFace {
@@ -15,13 +14,13 @@ abstract class AuthInterFace {
   );
 
   /// GoogleSignIn
-  Future<GoogleSignInAccount> googleSignIn();
+  Future<UserCredential> googleSignIn();
 }
 
 /// AuthImpl
 final class AuthImpl implements AuthInterFace {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final _googleAuthProvider = GoogleAuthProvider();
 
   @override
   Future<UserCredential> signWithEmailAndPassword(Users users) async {
@@ -54,13 +53,8 @@ final class AuthImpl implements AuthInterFace {
   }
 
   @override
-  Future<GoogleSignInAccount> googleSignIn() async {
-    final googleUser = await _googleSignIn.signIn();
-    if (googleUser == null) {
-      throw const CustomException(
-        'Google hesabı ile giriş yaparken hata oluştu',
-      );
-    }
+  Future<UserCredential> googleSignIn() async {
+    final googleUser = _firebaseAuth.signInWithProvider(_googleAuthProvider);
     return googleUser;
   }
 }
