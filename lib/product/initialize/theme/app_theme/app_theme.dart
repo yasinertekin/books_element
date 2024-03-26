@@ -13,4 +13,10 @@ abstract class AppTheme {
 
   /// TextTheme
   TextTheme get textTheme;
+
+  /// AppBarTheme
+  AppBarTheme get appBarTheme;
+
+  /// BottomNavigationBarThemeData
+  BottomNavigationBarThemeData get bottomNavigationBarThemeData;
 }

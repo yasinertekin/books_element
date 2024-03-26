@@ -1,6 +1,8 @@
 import 'package:bloc_example/feature/index.dart';
 import 'package:bloc_example/product/initialize/theme/app_theme/app_theme.dart';
+import 'package:google_fonts/google_fonts.dart';
 
+part 'style/app_bar_theme.dart';
 part 'style/button_style.dart';
 part 'style/outlined_input_border.dart';
 part 'style/text_theme.dart';
@@ -14,6 +16,9 @@ final class CustomTheme implements AppTheme {
         scaffoldBackgroundColor: ColorName.colorFoggyPith,
         elevatedButtonTheme: elevatedButtonThemeData,
         textTheme: textTheme,
+        fontFamily: GoogleFonts.suezOne().fontFamily,
+        appBarTheme: appBarTheme,
+        bottomNavigationBarTheme: bottomNavigationBarThemeData,
       );
 
   @override
@@ -31,4 +36,19 @@ final class CustomTheme implements AppTheme {
 
   @override
   TextTheme get textTheme => const _TextTheme();
+
+  @override
+  AppBarTheme get appBarTheme => const _AppBarTheme();
+
+  @override
+  BottomNavigationBarThemeData get bottomNavigationBarThemeData =>
+      const BottomNavigationBarThemeData(
+        backgroundColor: ColorName.colorFoggyPith,
+        selectedItemColor: ColorName.colorBlue,
+        unselectedItemColor: Colors.grey,
+        selectedIconTheme: IconThemeData(
+          color: ColorName.colorBlue,
+        ),
+        elevation: 0,
+      );
 }
