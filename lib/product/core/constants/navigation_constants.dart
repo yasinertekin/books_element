@@ -22,6 +22,10 @@ final class _NavigationConstants {
   static const String sarchView = 'search';
 
   static const String navBarView = '/nav-bar';
+
+  static const String profileView = 'profile';
+
+  static const String bookDetailView = '/book-detail';
 }
 
 /// Navigation Enum
@@ -49,6 +53,16 @@ enum NavigationEnum {
   /// Search View
   searchView(
     _NavigationConstants.sarchView,
+  ),
+
+  /// Profile View
+  profileView(
+    _NavigationConstants.profileView,
+  ),
+
+  /// Book Detail View
+  bookDetailView(
+    _NavigationConstants.bookDetailView,
   ),
 
   /// NavBar View
