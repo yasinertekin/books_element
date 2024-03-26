@@ -1,9 +1,7 @@
 import 'package:bloc_example/feature/home/domain/use_cases/uc_add_favorite_book.dart';
 import 'package:bloc_example/feature/home/domain/use_cases/uc_delete_favorite_book.dart';
 import 'package:bloc_example/feature/home/domain/use_cases/uc_get_favorite_book.dart';
-import 'package:bloc_example/feature/home/presentation/cubit/home_state.dart';
 import 'package:bloc_example/feature/index.dart';
-import 'package:bloc_example/product/model/book/item/item.dart';
 
 /// Cubit for HomeScreen
 final class HomeCubit extends Cubit<HomeState> {

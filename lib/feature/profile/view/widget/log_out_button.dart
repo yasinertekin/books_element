@@ -5,11 +5,19 @@ final class _LogOutButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        context.router.push(const LoginRoute());
-      },
-      child: const Text('Logout'),
+    return SizedBox(
+      width: double.infinity,
+      child: ElevatedButton(
+        onPressed: () {
+          context.router.push(const LoginRoute());
+        },
+        child: Text(
+          'Logout',
+          style: context.textTheme.titleSmall?.copyWith(
+            color: ColorName.colorWhite,
+          ),
+        ),
+      ),
     );
   }
 }

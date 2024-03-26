@@ -29,18 +29,17 @@ final class _ProfileBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: context.paddingAllLow,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const _UserInfo(),
-            SizedBox(height: context.dynamicHeight(0.03)),
-            const _LogOutButton(),
-            const _ChangeLanguageButton(),
-          ],
-        ),
+    return Padding(
+      padding: context.paddingAllLow,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const _UserInfo(),
+          SizedBox(height: context.dynamicHeight(0.03)),
+          const Spacer(),
+          const _ChangeLanguageButton(),
+          const _LogOutButton(),
+        ],
       ),
     );
   }

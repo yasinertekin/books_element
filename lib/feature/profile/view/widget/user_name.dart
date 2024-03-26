@@ -11,7 +11,7 @@ final class _UserName extends StatelessWidget {
         Padding(
           padding: context.paddingAllLow,
           child: Text(
-            FirebaseAuth.instance.currentUser?.displayName ?? 'İsim Yok',
+            FirebaseAuth.instance.currentUser?.displayName ?? 'Name Surname',
             style: context.textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.bold,
               color: ColorName.colorBlue,

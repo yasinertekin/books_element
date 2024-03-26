@@ -5,24 +5,27 @@ final class _ChangeLanguageButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        if (context.locale == Locales.tr.locale) {
-          ProductLocalization.updateLanguage(
-            context: context,
-            value: Locales.en,
-          );
-        } else {
-          ProductLocalization.updateLanguage(
-            context: context,
-            value: Locales.tr,
-          );
-        }
-      },
-      child: const Text(
-        'Change Language',
-        style: TextStyle(
-          color: Colors.white,
+    return SizedBox(
+      width: double.infinity,
+      child: ElevatedButton(
+        onPressed: () {
+          if (context.locale == Locales.tr.locale) {
+            ProductLocalization.updateLanguage(
+              context: context,
+              value: Locales.en,
+            );
+          } else {
+            ProductLocalization.updateLanguage(
+              context: context,
+              value: Locales.tr,
+            );
+          }
+        },
+        child: const Text(
+          'Change Language',
+          style: TextStyle(
+            color: Colors.white,
+          ),
         ),
       ),
     );
