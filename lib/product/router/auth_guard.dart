@@ -15,7 +15,7 @@ final class AuthGuard extends AutoRouteGuard {
       // Kullanıcı giriş yapmışsa ana sayfaya yönlendir
       router.push(const NavBarRoute());
     } else {
-      router.push(LoginRoute());
+      router.push(const LoginRoute());
     }
   }
 }

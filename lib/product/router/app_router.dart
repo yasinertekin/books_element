@@ -24,6 +24,10 @@ final class AppRouter extends $AppRouter {
           path: NavigationEnum.registerView.value,
         ),
         AdaptiveRoute(
+          page: BookDetailRoute.page,
+          path: NavigationEnum.bookDetailView.value,
+        ),
+        AdaptiveRoute(
           page: NavBarRoute.page,
           path: NavigationEnum.navBarView.value,
           children: [
@@ -34,6 +38,10 @@ final class AppRouter extends $AppRouter {
             AdaptiveRoute(
               page: SearchRoute.page,
               path: NavigationEnum.searchView.value,
+            ),
+            AdaptiveRoute(
+              page: ProfileRoute.page,
+              path: NavigationEnum.profileView.value,
             ),
           ],
         ),
