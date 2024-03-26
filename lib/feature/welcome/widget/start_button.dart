@@ -1,6 +1,6 @@
 part of '../welcome_view.dart';
 
-final class _StartButton extends StatelessWidget with NavigationMixin {
+final class _StartButton extends StatelessWidget {
   const _StartButton();
 
   @override
@@ -10,10 +10,7 @@ final class _StartButton extends StatelessWidget with NavigationMixin {
       height: context.dynamicHeight(0.08),
       child: ElevatedButton(
         onPressed: () {
-          navigateToNamedRoute(
-            context,
-            NavigationEnum.loginView.value,
-          );
+          context.navigateToNamedRoute(NavigationEnum.loginView.value);
         },
         child: Text(
           LocaleKeys.buttons_start,
