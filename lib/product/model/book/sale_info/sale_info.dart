@@ -4,7 +4,9 @@ import 'package:bloc_example/product/model/book/sale_info_list_price/sale_info_l
 
 part 'sale_info.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(
+  explicitToJson: true,
+)
 @immutable
 final class SaleInfo extends Equatable {
   const SaleInfo({
@@ -33,25 +35,6 @@ final class SaleInfo extends Equatable {
   final String? buyLink;
   @JsonKey(name: 'offers')
   final List<Offer>? offers;
-
-  SaleInfo copyWith({
-    String? country,
-    String? saleability,
-    bool? isEbook,
-    SaleInfoListPrice? listPrice,
-    SaleInfoListPrice? retailPrice,
-    String? buyLink,
-    List<Offer>? offers,
-  }) =>
-      SaleInfo(
-        country: country ?? this.country,
-        saleability: saleability ?? this.saleability,
-        isEbook: isEbook ?? this.isEbook,
-        listPrice: listPrice ?? this.listPrice,
-        retailPrice: retailPrice ?? this.retailPrice,
-        buyLink: buyLink ?? this.buyLink,
-        offers: offers ?? this.offers,
-      );
 
   Map<String, dynamic> toJson() => _$SaleInfoToJson(this);
 

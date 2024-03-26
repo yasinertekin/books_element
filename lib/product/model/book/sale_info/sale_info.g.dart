@@ -28,8 +28,8 @@ Map<String, dynamic> _$SaleInfoToJson(SaleInfo instance) => <String, dynamic>{
       'country': instance.country,
       'saleability': instance.saleability,
       'isEbook': instance.isEbook,
-      'listPrice': instance.listPrice,
-      'retailPrice': instance.retailPrice,
+      'listPrice': instance.listPrice?.toJson(),
+      'retailPrice': instance.retailPrice?.toJson(),
       'buyLink': instance.buyLink,
-      'offers': instance.offers,
+      'offers': instance.offers?.map((e) => e.toJson()).toList(),
     };

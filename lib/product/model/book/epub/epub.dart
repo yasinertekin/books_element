@@ -2,7 +2,9 @@ import 'package:bloc_example/feature/index.dart';
 
 part 'epub.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(
+  explicitToJson: true,
+)
 @immutable
 final class Epub extends Equatable {
   const Epub({
@@ -15,15 +17,6 @@ final class Epub extends Equatable {
   final bool? isAvailable;
   @JsonKey(name: 'acsTokenLink')
   final String? acsTokenLink;
-
-  Epub copyWith({
-    bool? isAvailable,
-    String? acsTokenLink,
-  }) =>
-      Epub(
-        isAvailable: isAvailable ?? this.isAvailable,
-        acsTokenLink: acsTokenLink ?? this.acsTokenLink,
-      );
 
   Map<String, dynamic> toJson() => _$EpubToJson(this);
 

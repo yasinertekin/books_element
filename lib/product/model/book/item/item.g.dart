@@ -30,8 +30,8 @@ Map<String, dynamic> _$ItemToJson(Item instance) => <String, dynamic>{
       'id': instance.id,
       'etag': instance.etag,
       'selfLink': instance.selfLink,
-      'volumeInfo': instance.volumeInfo,
-      'saleInfo': instance.saleInfo,
-      'accessInfo': instance.accessInfo,
-      'searchInfo': instance.searchInfo,
+      'volumeInfo': instance.volumeInfo?.toJson(),
+      'saleInfo': instance.saleInfo?.toJson(),
+      'accessInfo': instance.accessInfo?.toJson(),
+      'searchInfo': instance.searchInfo?.toJson(),
     };

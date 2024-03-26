@@ -4,7 +4,9 @@ import 'package:bloc_example/product/model/book/epub/epub.dart';
 part 'access_info.g.dart';
 
 @immutable
-@JsonSerializable()
+@JsonSerializable(
+  explicitToJson: true,
+)
 final class AccessInfo extends Equatable {
   const AccessInfo({
     this.country,
@@ -41,32 +43,6 @@ final class AccessInfo extends Equatable {
   final String? accessViewStatus;
   @JsonKey(name: 'quoteSharingAllowed')
   final bool? quoteSharingAllowed;
-
-  AccessInfo copyWith({
-    String? country,
-    String? viewability,
-    bool? embeddable,
-    bool? publicDomain,
-    String? textToSpeechPermission,
-    Epub? epub,
-    Epub? pdf,
-    String? webReaderLink,
-    String? accessViewStatus,
-    bool? quoteSharingAllowed,
-  }) =>
-      AccessInfo(
-        country: country ?? this.country,
-        viewability: viewability ?? this.viewability,
-        embeddable: embeddable ?? this.embeddable,
-        publicDomain: publicDomain ?? this.publicDomain,
-        textToSpeechPermission:
-            textToSpeechPermission ?? this.textToSpeechPermission,
-        epub: epub ?? this.epub,
-        pdf: pdf ?? this.pdf,
-        webReaderLink: webReaderLink ?? this.webReaderLink,
-        accessViewStatus: accessViewStatus ?? this.accessViewStatus,
-        quoteSharingAllowed: quoteSharingAllowed ?? this.quoteSharingAllowed,
-      );
 
   Map<String, dynamic> toJson() => _$AccessInfoToJson(this);
 

@@ -6,7 +6,9 @@ import 'package:bloc_example/product/model/book/volume_info/volume_info.dart';
 
 part 'item.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(
+  explicitToJson: true,
+)
 @immutable
 final class Item extends Equatable {
   const Item({
@@ -37,27 +39,6 @@ final class Item extends Equatable {
   final AccessInfo? accessInfo;
   @JsonKey(name: 'searchInfo')
   final SearchInfo? searchInfo;
-
-  Item copyWith({
-    String? kind,
-    String? id,
-    String? etag,
-    String? selfLink,
-    VolumeInfo? volumeInfo,
-    SaleInfo? saleInfo,
-    AccessInfo? accessInfo,
-    SearchInfo? searchInfo,
-  }) =>
-      Item(
-        kind: kind ?? this.kind,
-        id: id ?? this.id,
-        etag: etag ?? this.etag,
-        selfLink: selfLink ?? this.selfLink,
-        volumeInfo: volumeInfo ?? this.volumeInfo,
-        saleInfo: saleInfo ?? this.saleInfo,
-        accessInfo: accessInfo ?? this.accessInfo,
-        searchInfo: searchInfo ?? this.searchInfo,
-      );
 
   Map<String, dynamic> toJson() => _$ItemToJson(this);
 

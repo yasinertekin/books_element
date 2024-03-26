@@ -6,7 +6,9 @@ import 'package:bloc_example/product/model/book/reading_modes/reading_modes.dart
 
 part 'volume_info.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(
+  explicitToJson: true,
+)
 @immutable
 final class VolumeInfo extends Equatable {
   const VolumeInfo({
@@ -80,55 +82,6 @@ final class VolumeInfo extends Equatable {
   final String? infoLink;
   @JsonKey(name: 'canonicalVolumeLink')
   final String? canonicalVolumeLink;
-
-  VolumeInfo copyWith({
-    String? title,
-    String? subtitle,
-    List<String>? authors,
-    String? publisher,
-    String? publishedDate,
-    String? description,
-    List<IndustryIdentifier>? industryIdentifiers,
-    ReadingModes? readingModes,
-    int? pageCount,
-    String? printType,
-    List<String>? categories,
-    double? averageRating,
-    int? ratingsCount,
-    String? maturityRating,
-    bool? allowAnonLogging,
-    String? contentVersion,
-    PanelizationSummary? panelizationSummary,
-    ImageLinks? imageLinks,
-    String? language,
-    String? previewLink,
-    String? infoLink,
-    String? canonicalVolumeLink,
-  }) =>
-      VolumeInfo(
-        title: title ?? this.title,
-        subtitle: subtitle ?? this.subtitle,
-        authors: authors ?? this.authors,
-        publisher: publisher ?? this.publisher,
-        publishedDate: publishedDate ?? this.publishedDate,
-        description: description ?? this.description,
-        industryIdentifiers: industryIdentifiers ?? this.industryIdentifiers,
-        readingModes: readingModes ?? this.readingModes,
-        pageCount: pageCount ?? this.pageCount,
-        printType: printType ?? this.printType,
-        categories: categories ?? this.categories,
-        averageRating: averageRating ?? this.averageRating,
-        ratingsCount: ratingsCount ?? this.ratingsCount,
-        maturityRating: maturityRating ?? this.maturityRating,
-        allowAnonLogging: allowAnonLogging ?? this.allowAnonLogging,
-        contentVersion: contentVersion ?? this.contentVersion,
-        panelizationSummary: panelizationSummary ?? this.panelizationSummary,
-        imageLinks: imageLinks ?? this.imageLinks,
-        language: language ?? this.language,
-        previewLink: previewLink ?? this.previewLink,
-        infoLink: infoLink ?? this.infoLink,
-        canonicalVolumeLink: canonicalVolumeLink ?? this.canonicalVolumeLink,
-      );
 
   Map<String, dynamic> toJson() => _$VolumeInfoToJson(this);
 
