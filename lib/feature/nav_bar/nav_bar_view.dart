@@ -1,5 +1,4 @@
 import 'package:bloc_example/feature/index.dart';
-import 'package:bloc_example/product/router/app_router.gr.dart';
 
 @RoutePage()
 final class NavBarView extends StatelessWidget {
@@ -10,9 +9,10 @@ final class NavBarView extends StatelessWidget {
     final Key myWidgetKey = UniqueKey();
 
     return AutoTabsScaffold(
-      routes: [
-        const SearchRoute(),
+      routes: const [
         HomeRoute(),
+        SearchRoute(),
+        ProfileRoute(),
       ],
       bottomNavigationBuilder: (_, tabsRouter) {
         return BottomNavigationBar(
@@ -20,9 +20,21 @@ final class NavBarView extends StatelessWidget {
           key: myWidgetKey,
           currentIndex: tabsRouter.activeIndex,
           onTap: tabsRouter.setActiveIndex,
-          items: const [
-            BottomNavigationBarItem(label: 'Users', icon: Icon(Icons.person)),
-            BottomNavigationBarItem(label: 'Posts', icon: Icon(Icons.post_add)),
+          items: [
+            BottomNavigationBarItem(
+              label: LocaleKeys.navbar_home.tr(),
+              icon: const Icon(
+                Icons.home,
+              ),
+            ),
+            BottomNavigationBarItem(
+              label: LocaleKeys.navbar_search.tr(),
+              icon: const Icon(Icons.search),
+            ),
+            BottomNavigationBarItem(
+              label: LocaleKeys.navbar_profile.tr(),
+              icon: const Icon(Icons.person),
+            ),
           ],
         );
       },
