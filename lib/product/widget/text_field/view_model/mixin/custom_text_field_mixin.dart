@@ -1,7 +1,7 @@
 import 'package:bloc_example/feature/index.dart';
 
 /// CustomTextFieldMixin
-mixin CustomTextFieldMixin on State<CustomTextField> {
+base mixin CustomTextFieldMixin on State<CustomTextField> {
   late final TextEditingController _controller;
 
   /// Controller Getter

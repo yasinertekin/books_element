@@ -14,6 +14,9 @@ final class CustomTextField extends StatefulWidget {
     this.textInputAction = TextInputAction.next,
     this.inputDecoration,
     this.onFieldSubmitted,
+    this.isAutoFocus = false,
+    this.isReadOnly = false,
+    this.onTap,
   });
 
   /// Controller
@@ -37,6 +40,15 @@ final class CustomTextField extends StatefulWidget {
   /// Input Decoration
   final InputDecoration? inputDecoration;
 
+  /// Is Auto Focus
+  final bool isAutoFocus;
+
+  /// Is Read Only
+  final bool isReadOnly;
+
+  /// on Tap
+  final void Function()? onTap;
+
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
 }
@@ -49,6 +61,9 @@ final class _CustomTextFieldState extends State<CustomTextField>
       bloc: textFieldCubit,
       builder: (context, state) {
         return TextFormField(
+          onTap: widget.onTap,
+          autofocus: widget.isAutoFocus,
+          readOnly: widget.isReadOnly,
           onFieldSubmitted: widget.onFieldSubmitted,
           keyboardType: widget.keyboardType,
           obscureText: widget.keyboardType == TextInputType.visiblePassword &&
